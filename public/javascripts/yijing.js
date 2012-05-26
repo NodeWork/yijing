@@ -121,6 +121,14 @@ $.gua = {
         });
         
         jc.start('canvas_1');
+    },
+
+    drawMap : function (gua) {
+        var that = this;
+
+        jc.start('canvas_1', true);
+        jc.circle(400, 300, 300);
+        jc.start('canvas_1');
     }
 
 };
