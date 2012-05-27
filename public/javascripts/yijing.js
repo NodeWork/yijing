@@ -35,6 +35,8 @@ function triangle (x1, x2, x3, color, id) {
 
 /* ============================= DS for Gua */
 
+$.yijing.xianTian8Gua = ['111', '011', '101', '001', '110', '010', '100', '000'];
+
 var gua = function (guaNameStr) {
     this.guaNameStr = guaNameStr;
     this.yaos = guaNameStr.split('').reverse();
@@ -48,7 +50,7 @@ $.extend(gua, {
         hasDatas : function () { return this.datas; },
         getGuaName: function () { return this.datas.name; },
         getGuaCi: function () { return this.datas.guaci; },
-        getGuaDaXiang: function () { return this.datas.xiang; },
+        getGuaDaXiang: function () { return this.datas.xiang[0]; },
         getGuaTuanCi: function () { return this.datas.tuan; },
         getYaoName: function (index) {
             var that = this,
@@ -59,15 +61,17 @@ $.extend(gua, {
                 return that.positions1[yaoNameStr] + that.positions2[index] ;
             }
         },
-        getYaoCi: function (index) { return this.datas['yaoci'][index]; },
-        getYaoXiaoXiang: function (index) { return this.datas['yaoxiang'][index]; }
+        getYaoCi: function (index) { return this.datas['yaoci'][index-1]; },
+        getYaoXiaoXiang: function (index) { return this.datas['xiang'][index]; }
     }
 });
 
 /* ============================= Gua Painter */
 
 var guaPainter = function (opts) {
-    this.init(opts);
+    
+    var opts = opts || {};
+    $.extend(this.opts, opts);
 };
 
 $.extend(guaPainter, {
@@ -87,8 +91,7 @@ $.extend(guaPainter, {
     
     init : function (opts) {
         var that = this;
-        opts = opts || {};
-        $.extend(that.opts, opts);
+        
     },
 
     drawPointer : function (x, y, color) {
@@ -128,7 +131,7 @@ $.extend(guaPainter, {
             opts = that.opts,
             color = color || that.yangColor;
 
-        that.drawYaoName(name, x, y);
+        // that.drawYaoName(name, x, y);
 
         return jc.rect(x, y, opts.width, opts.height, color, 1);
     },
@@ -139,7 +142,7 @@ $.extend(guaPainter, {
             color = color || that.yinColor,
             a = (opts.width - opts.interval ) / 2;
 
-        that.drawYaoName(name, x, y);
+        // that.drawYaoName(name, x, y);
 
         res = jc.rect(x, y, opts.width, opts.height, 'rgba(0,0,0,1)', 1);
         jc.rect(x + a , y, opts.interval, opts.height, 'rgba(255,255,255, 1)', 1);
@@ -151,11 +154,9 @@ $.extend(guaPainter, {
             opts = that.opts,
             start = 260,
             step = opts.height + opts.margin,
-            notRedrawMe = notRedrawMe || -1,
             drawer = { '1' : that.drawYangYao, 
                        '0' : that.drawYinYao };
         gua.yaos
-            .filter(function (x, i) { return i !== notRedrawMe; })
             .map(function (x, i) {
                 var index = i + 1;
                 drawer[x].call(that, opts.yaoOffsetX, start - i * step, gua.getYaoName(index), colors[x])
@@ -193,12 +194,44 @@ $.extend(guaPainter, {
                                    '0' : that.yinColor },
             data = $.yijing.datas[gua];
 
-        jc.start('canvas_1', true);
+        jc.start('canvas_2', true);
         
         that.drawGuaName(gua);
         that.drawGua(gua, colors);
 
-        jc.start('canvas_1');
+        jc.start('canvas_2');
+    },
+
+    /** 
+     * Just show Yaos and Gua name
+     */
+    drawGuaSimple : function (guaNameStr, startX, startY) {
+        var that = this,
+            opts = that.opts,
+            step = opts.height + opts.margin,
+            yaos = guaNameStr.split('').reverse();
+            drawer = { '1' : that.drawYangYao, 
+                       '0' : that.drawYinYao },
+            gua = new $.yijing.gua(guaNameStr);
+
+        // FIXME: bettor to add click event to Gua but not Yao.
+        //
+        gua.yaos.map(function (x, i) {
+                var index = i + 1,
+                    target = drawer[x].call(that, startX, startY - i * step);
+                   if (gua.hasDatas()) {
+                        target.click(function () { 
+                            $("#div1").slideToggle("slow");
+                            $('#div2').slideToggle("slow");
+                            // $.yijing.showGua(guaNameStr);
+                            // that.drawGua(gua);
+                        });
+                   } else {
+                        // maybe disable;
+                        // that.opacityYaos(gua, 0.8);
+                   }
+            
+        });
     }
 
 }});
@@ -216,39 +249,16 @@ function showGua(guaNameStr) {
     var gua = new $.yijing.gua(guaNameStr),
     guaDrawer = new $.yijing.guaPainter();
     if (gua.hasDatas()) {
-        jc.canvas('canvas_1').clear();
+        jc.canvas('canvas_2').clear();
         guaDrawer.draw(gua);
     } else {
         showResult();
     }
     
 };
-function showResult (val) {
-    var val = val || "Not Found";
-    $('#searchResult').html(val);
-}
-function searchByName (name) {
-    var ds = $.yijing.datas;
-    for  ( var x in ds) { 
-        if (ds[x].name === name) {
-            return x;
-        }
-    }
-    return "";
-}
 
-$('#searchGua').click(function () {
-    showResult(" ");
-    var v = $('#searchContent').val();
-    if (/^[01]+$/g.test(v)) {
-        showGua(""+v);
-    } else {
-        showGua(searchByName(v));
-    }
-});
+$.yijing.showGua = showGua;
 
-showGua('000111');
-$('div.content').show();
 
 
 })(jQuery)

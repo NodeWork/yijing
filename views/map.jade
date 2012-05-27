@@ -1,4 +1,95 @@
 h1 Yi Jing
 
-canvas(id="canvas_1", height=600, width=800, class="gua hide")
+button(id="show64Map") show64Map
+#div1
+  canvas(id="canvas_1", height=600, width=800, class="gua")
+
+#div2(class="hide")
+  canvas(id="canvas_2", height=320, width=280, class="gua")
+
+  input(type="search",class="search", id="searchContent", placeholder="0/1 or name")
+  input(type="submit",value="Search", id="searchGua")
+  span(id="searchResult")
+
+  div(class="content")
+    section(name="guaci")
+      h2 卦辞
+      p
+    section(name="yaoci")
+      h2 爻辞
+      p
+    section(name="xiang")
+      h2 象傳
+      p
+    section(name="tuan")
+      h2 彖傳
+      p
+
+script
+   $(function () {
+      $('#show64Map').click(function () {
+          $("#div1").slideToggle("slow");
+          $('#div2').slideToggle("slow"); 
+      });
+      function drawMap () {
+        var rectX = 200,
+            rectY = 100,
+            rectW = 400,
+            guaDrawer = new $.yijing.guaPainter({
+                width: 40,
+                height: 5,
+                interval: 3,
+                margin: 2
+            }),
+            startX = rectX + rectW - 60,
+            startY = rectY + rectW - 20,
+            stepX = 45,
+            stepY = 45;
+
+        jc.start('canvas_1', true);
+        jc.circle(400,300,300);
+        jc.rect(rectX, rectY, rectW, rectW);
+
+        var i = 0,
+            gua8 = $.yijing.xianTian8Gua,
+            length = gua8.length;
+        for (;i < length; i++) {
+          for (var j=0; j < length; j++) {
+            //console.log(gua8[j]+gua8[i])
+            guaDrawer.drawGuaSimple(gua8[j]+gua8[i], startX - stepX * j, startY - stepY * i);
+          }
+        }
+        
+        jc.start();
+      };
+
+      function addSearchHandler () {
+        function showResult (val) {
+            var val = val || "Not Found";
+            $('#searchResult').html(val);
+        }
+        function searchByName (name) {
+            var ds = $.yijing.datas;
+            for  ( var x in ds) { 
+                if (ds[x].name === name) {
+                    return x;
+                }
+            }
+            return "";
+        }
+
+        $('#searchGua').click(function () {
+            showResult(" ");
+            var v = $('#searchContent').val();
+            if (/^[01]+$/g.test(v)) {
+                $.yijing.showGua(""+v);
+            } else {
+                $.yijing.showGua(searchByName(v));
+            }
+        });
+      }
+      drawMap();
+      addSearchHandler();
+        
+   });
 
