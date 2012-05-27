@@ -7,17 +7,31 @@ a {
   color: #00B7FF;
 }
 
+.hide {
+    display: none;
+}
+input.search {
+    width : 260px;
+}
 canvas.gua {
-    border: 1px gray dotted;
+    /*border: 1px gray dotted;*/
     float: left;
     margin: 0 20px;
 }
 
 div.content {
+    margin: 10px 0 0 0;
     padding: 20px;
-    border: 1px gray solid;
+    border: 3px gray dotted;
+    border-radius: 10px;
     height: 320pt;
     min-height: 320pt;
     width: 360px;
     float: left;
+}
+
+
+div.content h2 {
+    font-size: 30px;
+    margin: 10px 0;
 }
