@@ -5,11 +5,12 @@ div(class="navbar navbar-fixed-top")
       div(class="nav-collapse")
         ul(class="nav")
           li
-            a(href="/") 六十四卦
-          li
-            a(href="/gua") 查卦
-
-        ul(class="nav pull-right")
+            a(href="/") 六十四卦图
           li
             a(href="/doc/xuguazhuan") 序卦传
+
+        ul(class="nav pull-right")
+          form(action="gua")       
+            input(type="search",class="input-medium search-query", id="searchContent", name="guakey", placeholder="0/1 or name")
+            button(type="submit", id="searchGua", class="btn btn-danger" ) 查询
 

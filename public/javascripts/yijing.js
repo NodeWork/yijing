@@ -240,10 +240,11 @@ $.extend(guaPainter, {
                     }
             }; })(gua),
             clickH = (function (g) { return function () {
-                    $("#divMap").slideToggle("slow", function () {
-                        $('#divGuaDetail').show();
-                        $.yijing.showGua(g);
-                    });
+                    window.location = '/gua?guakey=' + g; 
+                    // $("#divMap").slideToggle("slow", function () {
+                    //     $('#divGuaDetail').show();
+                    //     $.yijing.showGua(g);
+                    // });
             }; })(guaNameStr);
 
         gua.yaos.map(function (x, i) {

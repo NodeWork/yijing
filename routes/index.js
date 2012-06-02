@@ -10,7 +10,7 @@ exports.index = function(req, res) {
 };
 
 exports.gua = function(req, res) {
-    var param = req.params.guaname || defaultGua ;
+    var param = req.params.guakey || req.query.guakey || defaultGua ;
 
   res.render('search', { guaname: param })
 };
