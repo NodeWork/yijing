@@ -7,7 +7,7 @@ default: clean
 clean:
 	rm -rf $(DIST)
 
-build:
+build: clean
 	mkdir -p $(DIST)
 	cp -r *.js *.json public/ routes/ views/ node_modules/ $(DIST)
 	cd $(DIST)/views && mv layout-js.jade.prod layout-js.jade
