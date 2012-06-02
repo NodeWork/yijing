@@ -1,11 +1,8 @@
-2. offline site
- (manifest="/cache.manifest")
 
-3. 
-    li
-      a(href="#") 系辞上
-    li
-      a(href="#") 系辞下
+Happy iChang.
+
+Find a deployment at [here](http://yijing.cloudfoundry.com/)
+
 
 
 ## TODO
@@ -17,3 +14,14 @@
 - about page for some common things
   (gua, yao, ZongGua, JiaoGua, etc.)
 
+
+## MISC
+
+2. offline site
+ (manifest="/cache.manifest")
+
+3. 
+    li
+      a(href="#") 系辞上
+    li
+      a(href="#") 系辞下
