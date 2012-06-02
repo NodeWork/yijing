@@ -13,6 +13,7 @@ var app = module.exports = express.createServer();
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
+  app.set('view options', { layout: false });
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
@@ -30,7 +31,8 @@ app.configure('production', function(){
 });
 
 // Routes
-
+app.get('/doc/:docname', routes.doc);
+app.get('/gua', routes.gua);
 app.get('/gua/:guaname', routes.gua);
 app.get('/', routes.index);
 

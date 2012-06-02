@@ -5,10 +5,15 @@ html
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   
-  body!= body
-  
-  footer(class="footer")
-    <p>&copy 2012 Wu,Haisheng <a href="http://github.com/freizl/yijing">Github</a></p>
+  body
+    include layout-nav
+
+    div(class="container")
+      block content
+      block footer
+        hr(class="clear")
+        footer(class="footer")
+          <p>&copy 2012 Wu,Haisheng <a href="http://github.com/freizl/yijing">Github</a></p>
 
   include layout-js
   script

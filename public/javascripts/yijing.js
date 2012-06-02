@@ -246,8 +246,6 @@ $.extend(guaPainter, {
                     });
             }; })(guaNameStr);
 
-        // FIXME: bettor to add click event to Gua but not Yao.
-        //
         gua.yaos.map(function (x, i) {
                 var index = i + 1,
                     target = drawer[x].call(that, startX, startY - i * step);

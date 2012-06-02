@@ -5,7 +5,6 @@
           $('#divGuaDetail').slideToggle(); 
       });
 
-      //
       $('#zonggua').click(function () {
           var cur = $.yijing.global.currentGua;
           if (cur) {
@@ -87,7 +86,10 @@
         });
       }
 
-      if ($('#canvas_1')) {
+      if ($('input[name="defaultGua"]').length && $('input[name="defaultGua"]').val()) {
+          $.yijing.showGua($('input[name="defaultGua"]').val());
+      }
+      if ($('#canvas_1').length) {
         drawMap('canvas_1');
       }
       addSearchHandler();
