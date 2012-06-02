@@ -24,8 +24,8 @@ div.content {
     padding: 20px;
     border: 3px gray dotted;
     border-radius: 10px;
-    height: 320pt;
-    min-height: 320pt;
+    /*height: 320pt;*/
+    min-height: 230pt;
     width: 360px;
     /*float: left;*/
 }

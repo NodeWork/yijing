@@ -1,8 +1,8 @@
 $(function () {
 
       $('#show64Map').click(function () {
-          $("#div1").slideDown("slow");
-          $('#div2').hide(); 
+          $("#div1").slideToggle("slow");
+          $('#div2').slideToggle(); 
       });
 
       //
@@ -34,8 +34,8 @@ $(function () {
             rectY = 100,
             rectW = 400,
             guaDrawer = new $.yijing.guaPainter({
-                width: 40,
-                height: 5,
+                width: 30,
+                height: 3,
                 interval: 3,
                 margin: 2
             }),

@@ -228,28 +228,40 @@ $.extend(guaPainter, {
             yaos = guaNameStr.split('').reverse();
             drawer = { '1' : that.drawYangYao, 
                        '0' : that.drawYinYao },
-            gua = new $.yijing.gua(guaNameStr);
+            gua = new $.yijing.gua(guaNameStr),
+            mouseoverH = (function (g) { return function () {
+                    if (g.hasDatas()) {
+                        this.color('rgba(240,240,240,0.5)');
+                    }
+            }; })(gua),
+            mouseoutH = (function (g) { return function () {
+                    if (g.hasDatas()) {
+                        this.color('rgba(0,0,0,0)');
+                    }
+            }; })(gua),
+            clickH = (function (g) { return function () {
+                    $("#div1").slideToggle("slow", function () {
+                        $('#div2').show();
+                        $.yijing.showGua(g);
+                    });
+            }; })(guaNameStr);
 
         // FIXME: bettor to add click event to Gua but not Yao.
         //
         gua.yaos.map(function (x, i) {
                 var index = i + 1,
                     target = drawer[x].call(that, startX, startY - i * step);
-                   if (gua.hasDatas()) {
-                        target.click(function (event) {
-                            // show Gua detail in callback otherwise the click handler 
-                            // will break cause position change.
-                            $("#div1").slideToggle("slow", function () {
-                                $('#div2').show();
-                                $.yijing.showGua(guaNameStr);
-                            });
-                        });
-                   } else {
-                        // maybe disable;
-                        // that.opacityYaos(gua, 0.8);
-                   }
-            
         });
+        
+        jc.rect(startX, startY - 5 * step, opts.width, opts.height + 5 * step, 'rgba(0,0,0,0)', 1)
+                 .click(clickH)
+                 .mouseover(mouseoverH)
+                 .mouseout(mouseoutH);
+
+        if (gua.hasDatas()) {
+            var x = opts.width / 2 - 5 * (gua.getGuaName().length);
+            jc.text(gua.getGuaName(), startX + x, startY - 5 * step - 2 ).font('11px Tahoma')   
+        }
     }
 
 }});
