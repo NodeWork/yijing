@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -15,7 +15,7 @@ input.search {
 }
 canvas.gua {
     /*border: 1px gray dotted;*/
-    float: left;
+    /*float: left;*/
     margin: 0 20px;
 }
 
@@ -27,7 +27,7 @@ div.content {
     height: 320pt;
     min-height: 320pt;
     width: 360px;
-    float: left;
+    /*float: left;*/
 }
 
 div.content h2 {

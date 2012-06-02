@@ -1,5 +1,24 @@
 (function ($) {
 
+/* extends jquery */
+
+if (! $.isFunction($.objKeys)) {
+    /** 
+     * Get a Object keys into a list
+     */
+    $.objKeys = function (obj) {
+        var re = [];
+        if (obj) {
+            for(var x in obj ) { 
+                if(obj.hasOwnProperty(x)) {
+                    re.push(x);
+                }
+            }
+        }
+        return re
+    }
+
+}
 /* ============================= display content */
 
 function explainGua (gua) {
@@ -35,8 +54,6 @@ function triangle (x1, x2, x3, color, id) {
 
 /* ============================= DS for Gua */
 
-$.yijing.xianTian8Gua = ['111', '011', '101', '001', '110', '010', '100', '000'];
-
 var gua = function (guaNameStr) {
     this.guaNameStr = guaNameStr;
     this.yaos = guaNameStr.split('').reverse();
@@ -70,20 +87,19 @@ $.extend(gua, {
 
 var guaPainter = function (opts) {
     
-    var opts = opts || {};
-    $.extend(this.opts, opts);
-};
-
-$.extend(guaPainter, {
-    prototype: {
-    opts : {
+    this.opts = opts || {
         yaoWeiDescOffset: 20,
         yaoOffsetX  : 70,
         interval : 10,  /* interval in Yin Yao */
         margin  : 10,   /* height margin between Yaos */
         width   : 160,
         height  : 30,
-    },
+    };
+};
+
+$.extend(guaPainter, {
+    prototype: {
+
     yangColor : 'rgba(255,0,0,0.8)',
     yinColor  : 'rgba(0,0,0,0.8)',
     yangColorLess : 'rgba(255,0,0,0.2)',
@@ -116,10 +132,10 @@ $.extend(guaPainter, {
     },
 
     opacityYaos : function (gua, opacity, notMe) {
-        var notMe = notMe || -1;
+        var notMe = notMe || [-1];
         gua.yaos.map(function (x1, y1) {
                     var tmp = y1 + 1;
-                    if (tmp !== notMe) {
+                    if (notMe.indexOf(tmp) < 0) {
                         jc('#yao'+tmp).opacity(opacity);
                     }
                     
@@ -164,7 +180,7 @@ $.extend(guaPainter, {
                          .click(function () { 
                              explainYao(gua, index);
                              this.opacity(1);
-                             that.opacityYaos(gua, 0.2, index);
+                             that.opacityYaos(gua, 0.2, [index]);
                           });
             
         });
@@ -220,11 +236,13 @@ $.extend(guaPainter, {
                 var index = i + 1,
                     target = drawer[x].call(that, startX, startY - i * step);
                    if (gua.hasDatas()) {
-                        target.click(function () { 
-                            $("#div1").slideToggle("slow");
-                            $('#div2').slideToggle("slow");
-                            // $.yijing.showGua(guaNameStr);
-                            // that.drawGua(gua);
+                        target.click(function (event) {
+                            // show Gua detail in callback otherwise the click handler 
+                            // will break cause position change.
+                            $("#div1").slideToggle("slow", function () {
+                                $('#div2').show();
+                                $.yijing.showGua(guaNameStr);
+                            });
                         });
                    } else {
                         // maybe disable;
@@ -245,20 +263,26 @@ $.yijing.guaPainter = guaPainter;
 /* ============================= display */
 
 function showGua(guaNameStr) {
+
+    while (guaNameStr && guaNameStr.length < 6) {
+        guaNameStr = '0' + guaNameStr;
+    };
     
+    $.yijing.global.currentGua = guaNameStr;
+
     var gua = new $.yijing.gua(guaNameStr),
     guaDrawer = new $.yijing.guaPainter();
     if (gua.hasDatas()) {
         jc.canvas('canvas_2').clear();
         guaDrawer.draw(gua);
     } else {
-        showResult();
+        console.log('no gua info found: ' + guaNameStr);
     }
     
 };
 
+$.yijing.global = $.yijing.global || {};
 $.yijing.showGua = showGua;
-
 
 
 })(jQuery)

@@ -1,28 +1,35 @@
-h1 周易
+h1 Yi Jing
 
-canvas(id="canvas_1", height=320, width=280, class="gua")
+button(id="show64Map") show64Map
+#div1(class="hide")
+  canvas(id="canvas_1", height=600, width=800, class="gua")
 
-input(type="search",class="search", id="searchContent", placeholder="0/1 or name")
-input(type="submit",value="Search", id="searchGua")
-span(id="searchResult")
+#div2(class="hide1")
+  div(style="float:left")
+    div
+      canvas(id="canvas_2", height=320, width=280, class="gua")
+    button(id="zonggua") 綜卦
+    button(id="cuogua") 錯卦
+    button(id="jiaogua") 交卦
 
-div(class="content hide")
-  section(name="guaci")
-    h2 卦辞
-    p
-  section(name="yaoci")
-    h2 爻辞
-    p
-  section(name="xiang")
-    h2 象傳
-    p
-  section(name="tuan")
-    h2 彖傳
-    p
+  div(style="float:left")
+    input(type="search",class="search", id="searchContent", placeholder="0/1 or name")
+    input(type="submit",value="查询", id="searchGua")
+    span(id="searchResult")
 
-script
-   $(function () {
-        
-       $.yijing.showGua('000111');
-       $('div.content').show();
-   });
+    div(class="content")
+      section(name="guaci")
+        h2 卦辞
+        p
+      section(name="yaoci")
+        h2 爻辞
+        p
+      section(name="xiang")
+        h2 象傳
+        p
+      section(name="tuan")
+        h2 彖傳
+        p
+
+script(src="/javascripts/main.js")  
+
