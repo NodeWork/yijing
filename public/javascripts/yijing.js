@@ -267,12 +267,15 @@ function showGua(guaNameStr) {
     while (guaNameStr && guaNameStr.length < 6) {
         guaNameStr = '0' + guaNameStr;
     };
-    
-    $.yijing.global.currentGua = guaNameStr;
 
-    var gua = new $.yijing.gua(guaNameStr),
-    guaDrawer = new $.yijing.guaPainter();
+    if ($.yijing.global.currentGua === guaNameStr) { 
+        return; 
+    }
+
+    var gua = new $.yijing.gua(guaNameStr);
     if (gua.hasDatas()) {
+        $.yijing.global.currentGua = guaNameStr;
+        guaDrawer = new $.yijing.guaPainter();
         jc.canvas('canvas_2').clear();
         guaDrawer.draw(gua);
     } else {
