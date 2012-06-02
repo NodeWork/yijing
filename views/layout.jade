@@ -14,11 +14,18 @@ html
         hr(class="clear")
         footer(class="footer")
           <p>&copy 2012 Wu,Haisheng | <a href="http://github.com/freizl/yijing">Github</a></p>
+        div(class="hide alert alert-error", style="font-size:20px;", id="notChromeBrowser")
+          a(class="close", data-dismiss="alert") x 
+          p 请使用Google Chrome浏览器以获得更好的效果.
 
   include layout-js
   script
     $(function ($) {
-      if (!($.browser && $.browser.webkit)) {
-        $('body').prepend('<div class="alert alert-error" style="font-size:20px;"><a class="close" data-dismiss="alert">×</a>请使用Google Chrome浏览器以获得更好的效果.</div>');
+      if (! $.browser.webkit && !localStorage.iDontLikeChrome) {
+        $('#notChromeBrowser').show();
+        $('#notChromeBrowser a').click(function (e) { 
+          $('#notChromeBrowser').hide(); 
+          localStorage.iDontLikeChrome = 1; // actually could be anything.
+        });
       }
     });
