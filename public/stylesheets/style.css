@@ -3,9 +3,11 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+div#divGuaDetail > div {
+    float: left;
+}
+
 canvas.gua {
-    /*border: 1px gray dotted;*/
-    /*float: left;*/
     margin: 0 20px;
 }
 
@@ -14,10 +16,8 @@ div.content {
     padding: 20px;
     border: 3px gray dotted;
     border-radius: 10px;
-    /*height: 320pt;*/
     min-height: 230pt;
     width: 360px;
-    /*float: left;*/
 }
 
 div.content h2 {
@@ -30,4 +30,8 @@ button#zonggua {
 }
 button {
     margin: 0 5px;
+}
+
+.footer {
+    clear: both;
 }

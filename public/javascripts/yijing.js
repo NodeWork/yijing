@@ -240,8 +240,8 @@ $.extend(guaPainter, {
                     }
             }; })(gua),
             clickH = (function (g) { return function () {
-                    $("#div1").slideToggle("slow", function () {
-                        $('#div2').show();
+                    $("#divMap").slideToggle("slow", function () {
+                        $('#divGuaDetail').show();
                         $.yijing.showGua(g);
                     });
             }; })(guaNameStr);

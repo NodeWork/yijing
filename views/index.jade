@@ -1,33 +1,8 @@
 h1 周易
 
 button(id="show64Map", class="btn btn-danger") 六十四卦图
-#div1(class="hide1")
+#divMap
   canvas(id="canvas_1", height=600, width=800, class="gua")
 
-#div2(class="hide")
-  div(style="float:left")
-    div
-      canvas(id="canvas_2", height=320, width=280, class="gua")
-    p
-      button(class="btn btn-danger", id="zonggua") 綜卦
-      button(class="btn btn-danger", id="cuogua") 錯卦
-      button(class="btn btn-danger", id="jiaogua") 交卦
-
-  div(style="float:left")
-    input(type="search",class="input-medium search-query", id="searchContent", placeholder="0/1 or name")
-    input(type="submit",value="查询", id="searchGua", class="btn btn-danger" )
-    span(id="searchResult")
-
-    div(class="content")
-      section(name="guaci")
-        h2 卦辞
-        p
-      section(name="yaoci")
-        h2 爻辞
-        p
-      section(name="xiang")
-        h2 象傳
-        p
-      section(name="tuan")
-        h2 彖傳
-        p
+#divGuaDetail(class="hide")
+  include search

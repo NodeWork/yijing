@@ -31,7 +31,7 @@ app.configure('production', function(){
 
 // Routes
 
-// app.get('/gua/:guaname', routes.index);
+app.get('/gua/:guaname', routes.gua);
 app.get('/', routes.index);
 
 app.listen(process.env.VCAP_APP_PORT || 3000);

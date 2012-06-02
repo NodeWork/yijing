@@ -1,8 +1,8 @@
 (function ($) {
 
       $('#show64Map').click(function () {
-          $("#div1").slideToggle("slow");
-          $('#div2').slideToggle(); 
+          $("#divMap").slideToggle("slow");
+          $('#divGuaDetail').slideToggle(); 
       });
 
       //
@@ -29,7 +29,7 @@
           }
       });
 
-      function drawMap () {
+      function drawMap (mapId) {
         var rectX = 200,
             rectY = 100,
             rectW = 400,
@@ -44,7 +44,7 @@
             stepX = 45,
             stepY = 45;
 
-        jc.start('canvas_1', true);
+        jc.start(mapId, true);
         jc.circle(400,300,300);
         jc.rect(rectX, rectY, rectW, rectW);
 
@@ -87,7 +87,9 @@
         });
       }
 
-      drawMap();
+      if ($('#canvas_1')) {
+        drawMap('canvas_1');
+      }
       addSearchHandler();
         
 })(jQuery);
