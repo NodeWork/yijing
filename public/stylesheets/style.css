@@ -3,16 +3,6 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
-
-.hide {
-    display: none;
-}
-input.search {
-    /*width : 260px;*/
-}
 canvas.gua {
     /*border: 1px gray dotted;*/
     /*float: left;*/
@@ -35,8 +25,9 @@ div.content h2 {
     margin: 10px 0;
 }
 
-footer {
-    clear: both;
-    font-size: 11px;
-    color: gray;
+button#zonggua {
+    margin-left: 86px;
+}
+button {
+    margin: 0 5px;
 }

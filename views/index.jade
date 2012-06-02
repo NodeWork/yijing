@@ -1,6 +1,6 @@
 h1 周易
 
-button(id="show64Map") 六十四卦图
+button(id="show64Map", class="btn btn-danger") 六十四卦图
 #div1(class="hide1")
   canvas(id="canvas_1", height=600, width=800, class="gua")
 
@@ -8,13 +8,14 @@ button(id="show64Map") 六十四卦图
   div(style="float:left")
     div
       canvas(id="canvas_2", height=320, width=280, class="gua")
-    button(id="zonggua") 綜卦
-    button(id="cuogua") 錯卦
-    button(id="jiaogua") 交卦
+    p
+      button(class="btn btn-danger", id="zonggua") 綜卦
+      button(class="btn btn-danger", id="cuogua") 錯卦
+      button(class="btn btn-danger", id="jiaogua") 交卦
 
   div(style="float:left")
-    input(type="search",class="search", id="searchContent", placeholder="0/1 or name")
-    input(type="submit",value="查询", id="searchGua")
+    input(type="search",class="input-medium search-query", id="searchContent", placeholder="0/1 or name")
+    input(type="submit",value="查询", id="searchGua", class="btn btn-danger" )
     span(id="searchResult")
 
     div(class="content")
