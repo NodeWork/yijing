@@ -1,4 +1,4 @@
-$(function () {
+(function ($) {
 
       $('#show64Map').click(function () {
           $("#div1").slideToggle("slow");
@@ -90,4 +90,4 @@ $(function () {
       drawMap();
       addSearchHandler();
         
-   });
+})(jQuery);

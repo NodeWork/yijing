@@ -2,13 +2,18 @@
 html
   head
     title 周易
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src="http://code.jquery.com/jquery-1.7.2.min.js")
-    script(src="/javascripts/jCanvaScript.js")
-    script(src="/javascripts/data.js")
-    script(src="/javascripts/yijing.js")
   
   body!= body
   
   footer
     <p>&copy 2012 Wu,Haisheng <a href="http://github.com/freizl/yijing">Github</a></p>
+
+  include layout-js
+  script
+    $(function ($) {
+      if (!($.browser && $.browser.webkit)) {
+        $('body').prepend('<div class="alert alert-error" style="font-size:20px;"><a class="close" data-dismiss="alert">×</a>请使用Google Chrome浏览器以获得更好的效果.</div>');
+      }
+    });

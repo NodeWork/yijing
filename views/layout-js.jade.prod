@@ -1,0 +1,7 @@
+
+script(src="http://code.jquery.com/jquery-1.7.2.min.js")
+script(src="/javascripts/jCanvaScript.js.min.js")
+script(src="/javascripts/bootstrap-alert.js.min.js")
+script(src="/javascripts/data.js.min.js")
+script(src="/javascripts/yijing.js.min.js")
+script(src="/javascripts/main.js.min.js")
