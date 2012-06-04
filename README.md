@@ -1,4 +1,3 @@
-
 Happy iChang.
 
 Find a deployment at [here](http://yijing.cloudfoundry.com/)
@@ -7,6 +6,7 @@ Find a deployment at [here](http://yijing.cloudfoundry.com/)
 
 ## TODO
 
+- [cache and PRODUCTION env](http://stackoverflow.com/questions/6573315/how-to-active-caching-on-express-node-js)
 - gua on the circle
 - XianTian 8Gua Map
 - Maybe HouTian 8Gua Map
