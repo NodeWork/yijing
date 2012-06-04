@@ -18,14 +18,19 @@ html
           a(class="close", data-dismiss="alert") x 
           p 请使用Google Chrome浏览器以获得更好的效果.
 
-  include layout-js
+  script(src="http://code.jquery.com/jquery-1.7.2.min.js")
+  block bottomjs
   script
     $(function ($) {
-      if (! $.browser.webkit && !localStorage.iDontLikeChrome) {
-        $('#notChromeBrowser').show();
-        $('#notChromeBrowser a').click(function (e) { 
-          $('#notChromeBrowser').hide(); 
-          localStorage.iDontLikeChrome = 1; // actually could be anything.
-        });
+      if ($('#notChromeBrowser').length > 0) {
+        if (! $.browser.webkit && !sessionStorage.iDontLikeChrome) {
+          $('#notChromeBrowser').show();
+          $('#notChromeBrowser a').click(function (e) { 
+            $('#notChromeBrowser').remove(); 
+            sessionStorage.iDontLikeChrome = 1; // actually could be anything.
+          });
+        } else {
+          $('#notChromeBrowser').remove();
+        }
       }
     });

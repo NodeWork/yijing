@@ -3,3 +3,8 @@ extends layout
 block content
   #divMap
     canvas(id="canvas_1", height=600, width=800, class="gua")
+
+
+block bottomjs
+    include layout-js
+    script(src="/javascripts/index.js") 
