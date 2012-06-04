@@ -3,16 +3,16 @@ Happy iChang.
 Find a deployment at [here](http://yijing.cloudfoundry.com/)
 
 
-
 ## TODO
 
-- [cache and PRODUCTION env](http://stackoverflow.com/questions/6573315/how-to-active-caching-on-express-node-js)
-- gua on the circle
-- XianTian 8Gua Map
-- Maybe HouTian 8Gua Map
+- [X] cache and PRODUCTION env.
+  Seems Nignx has done this yet. otherwise check nodeclub for example.
 
-- about page for some common things
-  (gua, yao, ZongGua, JiaoGua, etc.)
+- [ ] gua on the circle
+- [ ] XianTian 8Gua Map
+- [ ] Maybe HouTian 8Gua Map
+- [ ] about page for some common things
+      (gua, yao, ZongGua, JiaoGua, etc.)
 
 
 ## MISC

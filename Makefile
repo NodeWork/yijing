@@ -10,9 +10,9 @@ clean:
 build: clean
 	mkdir -p $(DIST)
 	cp -r *.js *.json public/ routes/ views/ node_modules/ $(DIST)
-	cd $(DIST)/views && mv layout-js.jade.prod layout-js.jade
 	cd $(DIST)/public/javascripts/ && for x in *.js ; do \
 		uglifyjs $$x > $$x.min.js && rm $$x ; \
+		mv -f $$x.min.js $$x ; \
 	done
 
 prev: build
