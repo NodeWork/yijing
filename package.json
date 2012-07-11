@@ -8,6 +8,8 @@
     , "markdown": ">= 0.3.0"
   }
   , "subdomain": "yijing"
-  , "scripts.start": "app.js"
-  , "engines": "0.6.x"
+  , "scripts": {
+      "start": "node app.js"
+  }
+  , "engines": {"node": "v0.6.x"}
 }
