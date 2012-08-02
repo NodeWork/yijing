@@ -35,6 +35,7 @@ function explainGua (gua) {
 
     $('div.content section[name="tuan"]').show();
     $('div.content section[name="tuan"] > p:first').html(gua.getGuaTuanCi());
+    $('#explaination').show();
 };
 
 function explainYao (gua, index) {
