@@ -5,7 +5,7 @@ APP=yijing
 default: clean
 
 p:
-	supervisor -w . app.js
+	supervisor -w .,routes,views app.js
 
 clean:
 	rm -rf $(DIST)

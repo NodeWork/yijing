@@ -4,28 +4,13 @@ div(class="navbar navbar-fixed-top")
       a(class="brand", href="/") 周易
       div(class="nav-collapse")
         ul(class="nav")
-          li
-            a(href="/") 六十四卦图
-          li
-            a(href="/doc/tuanci-1") 彖传上
-          li
-            a(href="/doc/tuanci-2") 彖传下
-          li
-            a(href="/doc/xiang-1") 象传上
-          li
-            a(href="/doc/xiang-2") 象传下
-          li
-            a(href="/doc/xici-1") 系辞上
-          li
-            a(href="/doc/xici-2") 系辞下
-          li
-            a(href="/doc/wenyan") 文言传
-          li
-            a(href="/doc/shuogua") 说卦传
-          li
-            a(href="/doc/xugua") 序卦传
-          li
-            a(href="/doc/zagua") 杂卦传
+          for n in navs
+            if (url == n.url)
+              li(class="active")
+                a(href="#{n.url}") #{n.name}
+            else
+              li
+                a(href="#{n.url}") #{n.name}
 
         ul(class="nav pull-right")
           form(action="/gua")       
