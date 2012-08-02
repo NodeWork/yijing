@@ -1,24 +1,6 @@
-(function ($) {
+;(function ($) {
 
-/* extends jquery */
 
-if (! $.isFunction($.objKeys)) {
-    /** 
-     * Get a Object keys into a list
-     */
-    $.objKeys = function (obj) {
-        var re = [];
-        if (obj) {
-            for(var x in obj ) { 
-                if(obj.hasOwnProperty(x)) {
-                    re.push(x);
-                }
-            }
-        }
-        return re;
-    };
-
-}
 /* ============================= display content */
 
 function explainGua (gua) {
@@ -266,7 +248,7 @@ $.extend(guaPainter, {
 
         if (gua.hasDatas()) {
             var x = opts.width / 2 - 5 * (gua.getGuaName().length);
-            jc.text(gua.getGuaName(), startX + x, startY - 5 * step - 2 ).font('11px Tahoma')   
+            jc.text(gua.getGuaName(), startX + x, startY - 5 * step - 2 ).font('11px Tahoma');   
         }
     }
 
@@ -306,4 +288,4 @@ $.yijing.global = $.yijing.global || {};
 $.yijing.showGua = showGua;
 
 
-})(jQuery)
+})(jQuery);

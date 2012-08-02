@@ -1,0 +1,10 @@
+extends layout
+block content
+  div(id="shiyiData")
+    ol
+
+block bottomjs
+  include layout-js
+  script(src="/javascripts/data-display.js")
+  script
+    $.yijing.displayXiang1();

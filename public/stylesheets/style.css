@@ -32,9 +32,6 @@ button {
     margin: 0 5px;
 }
 
-.clear {
-    clear: both;
-}
 form {
     margin: 5px;
 }
@@ -47,5 +44,5 @@ div.container p.special {
 }
 
 input[type="search"] {
-    width: 60px;
+    width: 50px;
 }

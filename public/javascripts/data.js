@@ -1,4 +1,4 @@
-(function ($) {
+;(function ($) {
     /* key: {..} */
     var data = {
       // ================================================ Shang Jing
@@ -1212,7 +1212,7 @@
                                  , '濡其首厉，何可久也。'
                                  ]
                   },
-         '101010': { 'name'     : '小过'
+         '101010': { 'name'     : '未济'
                   , 'guaci'    : '未济：亨，小狐汔济，濡其尾，无攸利。'
                   , 'tuan'     : '未济，亨；柔得中也。小狐汔济，未出中也。濡其尾，无攸利；不续终也。虽不当位，刚柔应也。'
                   , 'yaoci'    : [ '初六：濡其尾，吝。'
@@ -1274,7 +1274,8 @@
     $.yijing = $.yijing || {};
     // 64 Gua
     $.yijing.datas = data;
+      
     // xian tian 8 gua
     $.yijing.xianTian8Gua = xianTian8Gua;
 
-})(jQuery)
+})(jQuery);

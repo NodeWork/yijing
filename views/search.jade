@@ -1,8 +1,8 @@
 extends layout
 
 block content
-    div(style="margin-top:30px")
-      div(style="float:left")
+    div
+      div(class="pull-left")
         div
           canvas(id="canvas_2", height=320, width=280, class="gua")
         p
@@ -10,7 +10,7 @@ block content
           button(class="btn btn-danger", id="cuogua") 錯卦
           button(class="btn btn-danger", id="jiaogua") 交卦
 
-      div(style="float:left")
+      div(class="pull-left")
         div(class="content hide",id="explaination")
           section(name="guaci")
             h2 卦辞

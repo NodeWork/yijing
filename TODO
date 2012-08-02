@@ -2,6 +2,8 @@
 - [X] cache and PRODUCTION env.
   Seems Nignx has done this yet. otherwise check nodeclub for example.
 
+- [ ] style
+    - show / hide via transition.
 - [ ] gua on the circle
 - [ ] XianTian 8Gua Map
 - [ ] Maybe HouTian 8Gua Map
