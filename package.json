@@ -1,15 +1,17 @@
 {
-    "name": "yijing-in-html5"
-  , "version": "0.0.1"
-  , "private": true
-  , "dependencies": {
-      "express": "2.5.8"
-    , "jade": ">= 0.0.1"
-    , "markdown": ">= 0.3.0"
+  "name": "yijing-in-html5",
+  "version": "0.0.1-1",
+  "private": true,
+  "dependencies": {
+    "express": "2.5.8",
+    "jade": ">= 0.0.1",
+    "markdown": ">= 0.3.0"
+  },
+  "subdomain": "yijing",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "v0.6.x"
   }
-  , "subdomain": "yijing"
-  , "scripts": {
-      "start": "node app.js"
-  }
-  , "engines": {"node": "v0.6.x"}
 }

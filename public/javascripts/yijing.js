@@ -15,8 +15,8 @@ if (! $.isFunction($.objKeys)) {
                 }
             }
         }
-        return re
-    }
+        return re;
+    };
 
 }
 /* ============================= display content */
@@ -25,11 +25,16 @@ function explainGua (gua) {
     $('div.content section[name="guaci"]').show();
     $('div.content section[name="yaoci"]').hide();
 
-    $('div.content section[name="guaci"] > p').html(gua.getGuaCi());
-    $('div.content section[name="xiang"] > p').html(gua.getGuaDaXiang());
+    $('div.content section[name="guaci"] > p:first').html(gua.getGuaCi());
+    $('div.content section[name="xiang"] > p:first').html(gua.getGuaDaXiang());
+
+    if (gua.isYiGates()) {
+        $('div.content section[name="guaci"] > p.special').html(gua.getYaoCi(7));
+        $('div.content section[name="xiang"] > p.special').html(gua.getYaoXiaoXiang(7));
+    }
 
     $('div.content section[name="tuan"]').show();
-    $('div.content section[name="tuan"] > p').html(gua.getGuaTuanCi());
+    $('div.content section[name="tuan"] > p:first').html(gua.getGuaTuanCi());
 };
 
 function explainYao (gua, index) {
@@ -37,8 +42,8 @@ function explainYao (gua, index) {
     $('div.content section[name="guaci"]').hide();
     $('div.content section[name="yaoci"]').show();
 
-    $('div.content section[name="yaoci"] > p').html(gua.getYaoCi(index));
-    $('div.content section[name="xiang"] > p').html(gua.getYaoXiaoXiang(index));
+    $('div.content section[name="yaoci"] > p:first').html(gua.getYaoCi(index));
+    $('div.content section[name="xiang"] > p:first').html(gua.getYaoXiaoXiang(index));
     $('div.content section[name="tuan"]').hide();
 };
 
@@ -79,7 +84,8 @@ $.extend(gua, {
             }
         },
         getYaoCi: function (index) { return this.datas['yaoci'][index-1]; },
-        getYaoXiaoXiang: function (index) { return this.datas['xiang'][index]; }
+        getYaoXiaoXiang: function (index) { return this.datas['xiang'][index]; },
+        isYiGates: function () { return this.guaNameStr === "111111" || this.guaNameStr === "000000"; }
     }
 });
 
