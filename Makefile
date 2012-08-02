@@ -1,8 +1,11 @@
 
-DIST=_deploy
+DIST=_site
 APP=yijing
 
 default: clean
+
+p:
+	supervisor -w . app.js
 
 clean:
 	rm -rf $(DIST)
@@ -10,13 +13,18 @@ clean:
 build: clean
 	mkdir -p $(DIST)
 	cp -r *.js *.json public/ routes/ views/ node_modules/ $(DIST)
+	cp m
 	cd $(DIST)/public/javascripts/ && for x in *.js ; do \
 		uglifyjs $$x > $$x.min.js && rm $$x ; \
 		mv -f $$x.min.js $$x ; \
 	done
 
-prev: build
+
+prod-prev: build
 	cd $(DIST) && node app.js
 
-deploy: build
+vmc: build
 	vmc update $(APP) --path $(DIST) --runtime =node06
+
+jitsu: build
+	cd $(DIST) && jitsu deploy
