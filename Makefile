@@ -17,6 +17,11 @@ build: clean
 		uglifyjs $$x > $$x.min.js && rm $$x ; \
 		mv -f $$x.min.js $$x ; \
 	done
+	cd $(DIST)/public/javascripts/lib && for x in *.js ; do \
+		uglifyjs $$x > $$x.min.js && rm $$x ; \
+		mv -f $$x.min.js $$x ; \
+	done
+
 
 prod-prev: build
 	cd $(DIST) && NODE_ENV=production node app.js
