@@ -5,7 +5,8 @@
   "dependencies": {
     "express": "2.5.8",
     "jade": ">= 0.0.1",
-    "markdown": ">= 0.3.0"
+    "markdown": ">= 0.3.0",
+    "gzippo": "0.1.4"
   },
   "subdomain": "yijing",
   "scripts": {

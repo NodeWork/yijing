@@ -4,12 +4,14 @@
  */
 
 var express = require('express')
-  , routes = require('./routes');
+  , routes = require('./routes')
+  , gzippo = require('gzippo')
+  , path = require('path');;
 
 var app = module.exports = express.createServer();
 
 // Configuration
-
+var static_dir = path.join(__dirname, 'public');
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
@@ -19,7 +21,7 @@ app.configure(function(){
   app.use(express.cookieParser());
   app.use(express.session({ secret: 'your secret here' }));
   app.use(app.router);
-  app.use(express.static(__dirname + '/public'));
+  app.use(express.static(static_dir));
 });
 
 app.configure('development', function(){
@@ -28,6 +30,12 @@ app.configure('development', function(){
 
 app.configure('production', function(){
   app.use(express.errorHandler());
+	var maxAge = 3600000 * 24 * 30;
+	app.use(express.static(static_dir, { maxAge: maxAge }));
+	app.use(express.errorHandler()); 
+	app.set('view cache', true);
+    app.use(gzippo.staticGzip(static_dir));
+    app.use(gzippo.compress());
 });
 
 // Routes
