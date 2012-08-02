@@ -1,10 +1,10 @@
-extends layout
+extends ../layout/layout
 block content
   div(id="shiyiData")
     ol
 
 block bottomjs
-  include layout-js
+  include ../layout/layout-js
   script(src="/javascripts/data-display.js")
   script
     $.yijing.displayXiang2();

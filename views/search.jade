@@ -1,4 +1,4 @@
-extends layout
+extends layout/layout
 
 block content
     div
@@ -30,5 +30,5 @@ block content
       input(name="defaultGua", type="hidden", value="#{guaname}")
 
 block bottomjs
-    include layout-js
+    include layout/layout-js
     script(src="/javascripts/search.js") 

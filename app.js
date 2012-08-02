@@ -25,7 +25,6 @@ app.configure(function(){
   app.use(express.session({ secret: 'your secret here' }));
   app.use(app.router);
 
-  app.set('view cache', true);
   app.use(express.staticCache());
   app.use(express.static(__dirname + '/public', {maxAge: 86400000}));
 
@@ -36,6 +35,7 @@ app.configure('development', function(){
 });
 
 app.configure('production', function(){
+  app.set('view cache', true);
   app.use(express.errorHandler()); 
 });
 

@@ -37,5 +37,5 @@ exports.gua = function(req, res) {
 
 exports.doc = function(req, res) {
     var docname = req.params.docname;
-    res.render(docname, getResData(req));
+    res.render('doc/' + docname, getResData(req));
 };
