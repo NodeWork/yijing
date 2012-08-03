@@ -25,7 +25,6 @@ app.configure(function(){
   app.use(express.session({ secret: 'your secret here' }));
   app.use(app.router);
 
-  app.use(express.staticCache());
   app.use(express.static(__dirname + '/public', {maxAge: 86400000}));
 
 });
