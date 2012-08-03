@@ -67,7 +67,7 @@ input[type="search"] {
 }
  
 ::-webkit-scrollbar-thumb {
-    background: rgba(172,172,172,0.8);
+    background: rgba(152,152,152,0.8);
 }
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(131,131,131,0.8);
