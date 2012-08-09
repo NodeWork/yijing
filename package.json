@@ -1,5 +1,5 @@
 {
-  "name": "yijing-in-html5",
+  "name": "duyijing.cn",
   "version": "0.0.1-1",
   "private": true,
   "dependencies": {
@@ -8,7 +8,11 @@
     "markdown": ">= 0.3.0",
     "connect" : "2.4.x"
   },
-  "subdomain": "yijing",
+  "subdomain": "duyijing",
+  "domains": [
+    "duyijing.cn",
+    "www.duyijing.cn"
+  ],
   "scripts": {
     "start": "node app.js"
   },
