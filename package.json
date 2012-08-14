@@ -10,8 +10,7 @@
   },
   "subdomain": "duyijing",
   "domains": [
-    "duyijing.cn",
-    "www.duyijing.cn"
+      "yi.haisgwu.info"
   ],
   "scripts": {
     "start": "node app.js"
