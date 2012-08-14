@@ -6,7 +6,9 @@
 var defaultGua = '111111',
     navs = [ 
            //{url: '/', name: '六十四卦图'}
-             {url: '/doc/tuanci-1', name: '彖传上'}
+             {url: '/doc/yijing-1', name: '易经上'}
+           , {url: '/doc/yijing-2', name: '易经下'}
+           , {url: '/doc/tuanci-1', name: '彖传上'}
            , {url: '/doc/tuanci-2', name: '彖传下'}
            , {url: '/doc/xiang-1', name: '象传上'}
            , {url: '/doc/xiang-2', name: '象传下'}
