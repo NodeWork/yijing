@@ -9,10 +9,10 @@
     "connect" : "2.4.x"
   },
   "subdomain": "yijing",
-  "domain": {
+  "domain": [
       "www.duyijing.cn",
       "duyijing.cn"
-  },
+  ],
   "scripts": {
     "start": "node app.js"
   },
