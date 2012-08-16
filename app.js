@@ -8,7 +8,7 @@ var express = require('express')
   , connect = require('connect')
   , path = require('path');;
 
-var app = module.exports = express.createServer();
+var app = module.exports = express();
 
 // Configuration
 var static_dir = path.join(__dirname, 'public');
