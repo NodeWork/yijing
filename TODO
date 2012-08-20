@@ -9,15 +9,10 @@
 - [ ] Maybe HouTian 8Gua Map
 - [ ] about page for some common things
       (gua, yao, ZongGua, JiaoGua, etc.)
+- [ ] simplified bootstrap.css
 
 
 ## MISC
 
-2. offline site
+1. offline site
  (manifest="/cache.manifest")
-
-3. 
-    li
-      a(href="#") 系辞上
-    li
-      a(href="#") 系辞下
