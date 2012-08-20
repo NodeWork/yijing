@@ -8,7 +8,7 @@ var express = require('express')
   , connect = require('connect')
   , path = require('path');;
 
-var app = module.exports = express.createServer();
+var app = module.exports = express();
 
 // Configuration
 var static_dir = path.join(__dirname, 'public');
@@ -22,7 +22,7 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
-  app.use(express.session({ secret: 'your secret here' }));
+  //app.use(express.session({ secret: 'your secret here' }));
   app.use(app.router);
 
   app.use(express.static(__dirname + '/public', {maxAge: 86400000}));
