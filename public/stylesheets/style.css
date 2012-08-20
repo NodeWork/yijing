@@ -55,7 +55,27 @@ input[type="search"] {
     font-weight: bold;
 }
 
-/* ================== */
+/* ==========  Multiple Column */
+
+h1,h2 {
+    -webkit-column-span:all;
+    -moz-column-span:all;
+    column-span:all;
+}
+
+.column5 {
+    column-count: 5;
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+}
+
+.column2 {
+    column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+}
+
+/* ================== chrome scroll bar*/
 
 ::-webkit-scrollbar {
     width: 12px;
