@@ -1,3 +1,2 @@
-For learing iChang
-
-Find a deployment at [here](http://yijing.jit.su/)
+[Hello Backbone tutotrial](http://arturadib.com/hello-backbonejs/) 
+  + [Backbone Boilerplate And Grunt-BBB](http://addyosmani.github.com/backbone-fundamentals/#backboneboilerplate)
