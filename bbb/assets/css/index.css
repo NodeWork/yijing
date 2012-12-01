@@ -1,3 +1,28 @@
 body {
 
 }
+
+nav {
+  position: relative;
+  left: 0;
+  display: block;
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+nav > ul > li {
+    display: block;
+    float: left;
+}
+
+nav > ul > li > a {
+    float: none;
+    padding: 5px 5px 5px;
+    line-height: 10px;
+    color: #000;
+    text-decoration: none;
+}
+
+div#main {
+    clear: both;
+}
