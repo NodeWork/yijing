@@ -1,4 +1,6 @@
-define([
+
+define(
+[
    'backbone',
    'models/m.yao'
 ],
@@ -12,10 +14,7 @@ function (Backbone, Yao) {
          isYangYao : true
       };
 
-   var createYang = function (options) {
-      options || (options = {});
-      return new Yao(_.extend(defaults, options));
-   };
+   var YangYao = Yao.extend({defaults: defaults});
 
-   return createYang;
+   return YangYao;
 });

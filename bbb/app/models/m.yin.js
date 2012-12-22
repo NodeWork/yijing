@@ -1,4 +1,5 @@
-define([
+define(
+[
    'backbone',
    'models/m.yao'
 ],
@@ -11,10 +12,7 @@ function (Backbone, Yao) {
          clazz: 'yin'
       };
 
-   var createYin = function (options) {
-      options || (options = {});
-      return new Yao(_.extend(defaults, options));
-   };
+   var YinYao = Yao.extend({defaults: defaults});
 
-   return createYin;
+   return YinYao;
 });

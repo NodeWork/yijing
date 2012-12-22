@@ -8,23 +8,24 @@ define(
    'models/m.yin',
    'views/v.yin',
    'views/v.gua',
-   'models/c.gua',
-   'models/util'
+   'models/c.gua'
 
 ],
 
 function ($, Backbone, _, YangModel, YangView, YinModel, YinView,
-         GuaView, guaCollection, ModelUtil) {
+         GuaView, guaCollection) {
 
    var ItemView = Backbone.View.extend(
       {
+         className: 'showcase',
+
          initialize : function initialize () {
             _.bindAll(this, 'render');
 
-            this.yangView = new YangView({model: YangModel()});
-            this.yinView = new YinView({model: YinModel()});
-            var gua = ModelUtil.gua("000111");
-            this.guaView = new GuaView({collection: new guaCollection(gua)});
+            this.yangView = new YangView({model: new YangModel()});
+            this.yinView = new YinView({model: new YinModel()});
+            var code = "000111";;
+            this.guaView = new GuaView({collection: guaCollection.init(code)});
 
          },
 

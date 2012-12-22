@@ -53,10 +53,15 @@ label {
     display: block;
 }
 
-section {
+label:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+.showcase section {
     width: 200px;
     padding: 0 0 10px 25px;
 }
-label + section {
+.showcase label + section {
     border: 1px solid #CCC;
 }

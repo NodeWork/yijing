@@ -30,8 +30,9 @@ function ($, Bacbbone, _, Showcase) {
 
          showcase : function () {
             console.log("Router: showcase fn");
-            var view = new Showcase({el: $('#main')});
+            var view = new Showcase();
             view.render();
+            $('#main').html(view.el);
          },
 
          filter : function (param) {
@@ -43,4 +44,3 @@ function ($, Bacbbone, _, Showcase) {
    return Router;
 
 });
-

@@ -7,7 +7,9 @@ require.config(
          underscore: "../assets/js/libs/underscore",
          backbone: "../assets/js/libs/backbone",
          mustache: "../assets/js/libs/mustache",
-         text: "../assets/js/libs/text"
+         text: "../assets/js/libs/text",
+         sixfour: "../assets/js/six-four.data",
+         eight: "../assets/js/eight.data"
       },
       shim: {
          backbone: {
