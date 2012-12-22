@@ -26,3 +26,37 @@ nav > ul > li > a {
 div#main {
     clear: both;
 }
+
+/* ========== */
+
+.yang {
+    width: 160px;
+    height: 30px;
+    background-color: #FF0000;
+    display: block;
+    margin: 10px 0 0;
+}
+
+.yin {
+    width: 75px;
+    height: 30px;
+    background-color: #000;
+    display: inline-block;
+    margin: 10px 0 0;
+}
+
+.yin + .yin {
+    margin-left: 10px;
+}
+
+label {
+    display: block;
+}
+
+section {
+    width: 200px;
+    padding: 0 0 10px 25px;
+}
+label + section {
+    border: 1px solid #CCC;
+}
