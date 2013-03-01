@@ -1,4 +1,3 @@
-
 - [X] cache and PRODUCTION env.
   Seems Nignx has done this yet. otherwise check nodeclub for example.
 
@@ -11,6 +10,7 @@
       (gua, yao, ZongGua, JiaoGua, etc.)
 - [ ] simplified bootstrap.css
 
+use <http://zeptojs.com/>
 
 ## MISC
 
