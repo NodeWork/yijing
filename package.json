@@ -1,7 +1,7 @@
 {
   "name": "yijing",
     "private" : true,
-  "version": "0.2",
+  "version": "0.2.0",
   "dependencies": {},
     "domain": ["www.duyijing.cn", "duyijing.cn"],
   "devDependencies": {
