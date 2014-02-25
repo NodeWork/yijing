@@ -1,8 +1,8 @@
 (function (angular) {
    'use strict';
 
-   angular.module('yijingAngularApp')
-      .directive('yiGua', ['guaService', function (guaService) {
+   angular.module('yijing')
+      .directive('gua', ['guaService', function (guaService) {
          return {
             replace: true,
             restrict:'E',

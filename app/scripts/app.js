@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('yijingAngularApp', [
+angular.module('yijing', [
   'ngSanitize',
   'ngRoute'
 ])
@@ -13,6 +13,14 @@ angular.module('yijingAngularApp', [
         .when('/gua/:key', {
            templateUrl: '/views/gua-page.html',
            controller: 'GuaCtrl'
+        })
+        .when('/result/:key', {
+           templateUrl: '/views/result-page.html',
+           controller: 'ResultCtrl'
+        })
+        .when('/result', {
+           templateUrl: '/views/result-page.html',
+           controller: 'ResultCtrl'
         })
         .otherwise({
            redirectTo: '/'

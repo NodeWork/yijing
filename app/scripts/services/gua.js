@@ -7,7 +7,7 @@
       return yijing.datas[key] || {};
    }
 
-   angular.module('yijingAngularApp')
+   angular.module('yijing')
       .service('guaService', function Yigua() {
          // AngularJS will instantiate a singleton by calling "new" on this function
 
