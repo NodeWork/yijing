@@ -21,17 +21,13 @@
                var _doLink = function (guaKey) {
                   var key = guaKey,
                    xs = key ? key.split('') : [];
-              // console.log("11", guaKey);
                scope.items = xs.map(function (x) {
                   return { v: parseInt(x, 10),
                            clazz: [(parseInt(x,10) === 1 ? 'yang' : 'yin')]
                          };
                });
-               //console.log(key, xs, data);
                var data = guaService.guaData(key);
                //scope.guaData = data;
-               //console.log(attrs);
-               //console.log("22", key, xs, data);
                scope.showGuaInfo = true;
                scope.vo = { name: data.name,
                             guaCi: data.guaci,
@@ -68,7 +64,6 @@
                //_doLink(attrs.guaKey);
 
                scope.$watch('guaKey', function (newValue, oldValue) {
-                  console.log("new value:", arguments);
                   _doLink(newValue);
                });
             },
