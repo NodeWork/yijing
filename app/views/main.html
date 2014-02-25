@@ -1,4 +1,10 @@
-<gua gua-size="large" gua-key="000111" ></gua>
-<gua gua-size="large" gua-key="000101" ></gua>
-<gua gua-size="small" gua-key="111000" ></gua>
-<gua gua-size="small" gua-key="000101" ></gua>
+<gua gua-size="large" gua-key="'000111'" ></gua>
+<gua-simple gua-size="small" gua-key="'111000'" ></gua-simple>
+
+<div class="six-four">
+
+    <section ng-repeat="items in itemss">
+        <gua-simple ng-repeat="item in items" gua-size="small" gua-key="item.key" ></gua-simple>
+    </section>
+
+</div>

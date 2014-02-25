@@ -6,6 +6,35 @@
    function getGuaData (key) {
       return yijing.datas[key] || {};
    }
+
+   /**
+    * 64 Gua
+    */
+    function getSixFourGuas () {
+       /* Generate 64 Guas base on XianTian-8-Gua */
+       var gua8 = yijing.xianTian8Gua.map(function (o) { return o.key; }),
+           length = gua8.length-1,
+           i = length,
+           k,
+           key,
+           o,
+           xs = [];
+       for (;i >= 0; i--) {
+          for (var j=length; j >= 0; j--) {
+             k = length - i;
+             if (!xs[k]) {
+                xs[k] = [];
+             }
+             key = gua8[j] + gua8[i];
+             o = getGuaData(key);
+             xs[k].push({key:key, name: o.name});
+          }
+       }
+
+      return xs;
+   }
+
+
    function zongGua (key) {
       var xs = key.split('');
       xs.reverse();
@@ -35,13 +64,12 @@
              };
    }
 
-
-
    angular.module('yijing')
       .service('guaService', function Yigua() {
          // AngularJS will instantiate a singleton by calling "new" on this function
 
          this.guaData = getGuaData;
+         this.getSixFourGuas = getSixFourGuas;
          this.transform = transform;
       });
 

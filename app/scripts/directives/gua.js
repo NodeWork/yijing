@@ -64,6 +64,7 @@
                //_doLink(attrs.guaKey);
 
                scope.$watch('guaKey', function (newValue, oldValue) {
+                  //console.log("New Value", newValue, oldValue);
                   _doLink(newValue);
                });
             },
@@ -71,6 +72,40 @@
             templateUrl: 'gua.html'
          };
 
-      }]);
+      }])
+
+      .directive('guaSimple', ['guaService', function (guaService) {
+         return {
+            replace: true,
+            restrict:'E',
+            scope: { guaKey: '=', guaSize: '=' },
+            link: function(scope, element, attrs){
+               scope.guaSize = attrs.guaSize;
+
+               var _doLink = function (guaKey) {
+                  var key = guaKey,
+                   xs = key ? key.split('') : [];
+               scope.items = xs.map(function (x) {
+                  return { v: parseInt(x, 10),
+                           clazz: [(parseInt(x,10) === 1 ? 'yang' : 'yin')]
+                         };
+               });
+               var data = guaService.guaData(key);
+               scope.vo = { name: data.name,
+                            urlPath: '#gua/' + key
+                          };
+
+               };
+
+               scope.$watch('guaKey', function (newValue, oldValue) {
+                  _doLink(newValue);
+               });
+            },
+
+            templateUrl: 'gua-simple.html'
+         };
+
+      }])
+   ;
 
 })(angular);

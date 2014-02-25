@@ -1,10 +1,9 @@
 'use strict';
 
 angular.module('yijing')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl', ['$scope', 'guaService', function ($scope, guaService) {
+
+     $scope.itemss = guaService.getSixFourGuas();
+     console.log($scope.itemss);
+
+  }]);

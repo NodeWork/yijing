@@ -62,6 +62,18 @@
     </div>
     </script>
 
+    <script type="text/ng-template" id="gua-simple.html">
+      <a ng-href="{{ vo.urlPath }}" class="gua-simple">
+          <section class="gua {{guaSize}}">
+              <label ng-class="vo.name.length === 1 ? 'name' : 'name2'" >{{vo.name}}</label>
+              <span ng-repeat="item in items"
+                    seq="{{5 - $index}}"
+                    class="{{item.clazz.join(' ')}}" >
+              </span>
+          </section>
+      </a>
+    </script>
+
     <div class="header">
         <ul class="nav nav-pills pull-right">
             <li class="active"><a ng-href="#">Home</a></li>
