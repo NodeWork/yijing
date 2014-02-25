@@ -1,3 +1,11 @@
+@font-face {
+  font-family: MingLiu;
+  src: local("MingLiu") local("MingLiu-ExtraB") url("MingLiu.ttf") format("truetype");
+}
+
+body {
+  font-family: MingLiu, "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 
 .gua {
   border: 1px solid blue;
@@ -81,7 +89,7 @@ a.gua-simple:hover {
 
 /* ====================== */
 .six-four .gua-simple .gua.small {
-  width: 32px;
+  width: 34px;
   display: inline-block;
 }
 
