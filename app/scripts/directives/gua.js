@@ -94,7 +94,7 @@
                   });
                   var data = guaService.guaData(key);
                   scope.vo = { name: data.name,
-                               urlPath: '#gua/' + key //FIXME: move 'gua' as a constant
+                               urlPath: '#gua/' + data.name //FIXME: move 'gua' as a constant
                              };
 
                };
