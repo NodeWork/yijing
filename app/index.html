@@ -29,15 +29,15 @@
     <!-- ngTemplates -->
     <script type="text/ng-template" id="gua.html">
     <div>
-      <section class="gua {{guaSize}}">
+      <div class="col-sm-4 gua {{guaSize}}">
         <label ng-class="vo.name.length === 1 ? 'name' : 'name2'" ng-click="guaClick()">{{vo.name}}</label>
         <span ng-repeat="item in items"
               seq="{{5 - $index}}"
               class="{{item.clazz.join(' ')}}"
               ng-click="yaoClick(5-$index)" >
         </span>
-      </section>
-      <div class="explnation">
+      </div>
+      <div class="col-sm-4 explnation">
         <section name="guaCi" ng-show="showGuaInfo">
           <h2>卦辞</h2>
           <p>{{vo.guaCi}}</p>

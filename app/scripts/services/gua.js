@@ -58,9 +58,9 @@
 
    function transform (key) {
       return { base : key,
-               zong : zongGua(key),
-               cuo  : cuoGua(key),
-               jiao : jiaoGua(key)
+               zong : {name: "綜卦", key: zongGua(key)},
+               cuo  : {name: "錯卦", key: cuoGua(key)},
+               jiao : {name: "交卦", key: jiaoGua(key)}
              };
    }
 

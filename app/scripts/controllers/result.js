@@ -15,7 +15,10 @@
       .controller('ResultCtrl',['$scope', '$routeParams', 'guaService', function ($scope, $routeParams, guaService) {
 
          $scope.$watch('baseKey', function (newV, oldV) {
-            $scope.guas = guaService.transform(newV);
+            var obj = guaService.transform(newV);
+            $scope.guas = { base: obj.base,
+                            xs: [obj.zong, obj.cuo, obj.jiao]
+                          };
          });
 
          $scope.baseKey = normalizeInput($routeParams.key);
