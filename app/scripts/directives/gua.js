@@ -21,6 +21,7 @@
                var _doLink = function (guaKey) {
                   var key = guaKey,
                       xs = key ? key.split('') : [];
+                  // FIXME: duplicated function (generate Yang/Yin Yaos)
                   scope.items = xs.map(function (x) {
                      return { v: parseInt(x, 10),
                               clazz: [(parseInt(x,10) === 1 ? 'yang' : 'yin')]
@@ -71,6 +72,9 @@
 
       }])
 
+   /**
+    * Gua in a simple format, which only show its name and Yaos
+    */
       .directive('guaSimple', ['guaService', function (guaService) {
          return {
             replace: true,
@@ -82,6 +86,7 @@
                var _doLink = function (guaKey) {
                   var key = guaKey,
                       xs = key ? key.split('') : [];
+                  // FIXME: duplicated function (generate Yang/Yin Yaos)
                   scope.items = xs.map(function (x) {
                      return { v: parseInt(x, 10),
                               clazz: [(parseInt(x,10) === 1 ? 'yang' : 'yin')]
