@@ -8,9 +8,21 @@
    }
 
    /**
+    * Transform all datas with key is name
+    */
+   function namedData () {
+      var o = {};
+      angular.forEach(yijing.datas, function (v, k) {
+         o[v.name] = v;
+      });
+      return o;
+   }
+
+
+   /**
     * 64 Gua
     */
-    function getSixFourGuas () {
+   function getSixFourGuas () {
        /* Generate 64 Guas base on XianTian-8-Gua */
        var gua8 = yijing.xianTian8Gua.map(function (o) { return o.key; }),
            length = gua8.length-1,
@@ -69,6 +81,12 @@
          // AngularJS will instantiate a singleton by calling "new" on this function
 
          this.guaData = getGuaData;
+
+         this.namedData = namedData();
+
+         // Keys of Shang-Xia Jing
+         this.jings = [ yijing.shangJing, yijing.xiaJing ];
+
          this.getSixFourGuas = getSixFourGuas;
          this.transform = transform;
       });

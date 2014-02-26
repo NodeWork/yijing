@@ -74,7 +74,7 @@
       </a>
     </script>
     <!-- ngTemplates -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="NavCtrl">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -87,7 +87,21 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#/gua/101001">Result</a></li>
+              <!-- <li><a href="#/gua/101001">Result</a></li> -->
+            <li><a href="#/doc/yijing/1">易經上</a></li>
+            <li><a href="#/doc/yijing/2">易經下</a></li>
+            <li><a href="#/doc/tuan/1">彖傳上</a></li>
+            <li><a href="#/doc/tuan/2">彖傳下</a></li>
+            <li><a href="#/doc/xiang/1">象傳上</a></li>
+            <li><a href="#/doc/xiang/2">象傳下</a></li>
+            <li><a href="#/doc/xiang/2">象傳下</a></li>
+            <li><a href="#/xici-1">系辭上</a></li>
+            <li><a href="#/xici-2">系辭下</a></li>
+            <li><a href="#/wen-yan">文言傳</a></li>
+            <li><a href="#/shuo-gua">說卦傳</a></li>
+            <li><a href="#/xu-gua">序卦傳</a></li>
+            <li><a href="#/za-gua">雜卦傳</a></li>
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -133,6 +147,8 @@
         <script src="scripts/directives/gua.js"></script>
         <script src="scripts/services/gua.js"></script>
         <script src="scripts/controllers/gua.js"></script>
+        <script src="scripts/controllers/doc.js"></script>
+        <script src="scripts/controllers/nav.js"></script>
         <!-- endbuild -->
 </body>
 </html>

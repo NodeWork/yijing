@@ -6,8 +6,11 @@
 
 body {
   /* FIXME: why h2 style override body */
-  font-family: MingLiu, "Helvetica Neue",Helvetica,Arial,sans-serif !important;
   padding-top: 60px;
+}
+
+body,h1,h2,h3,pre {
+  font-family: MingLiu, "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .yin-yang {
@@ -144,6 +147,10 @@ a.gua-simple:hover {
    padding-top: 20px;
  }
 
+/* ====================== 10-Yi Doc */
+.shiyi-doc .name {
+  font-size: 26px;
+}
 /* ====================== responsive */
 
 @media (max-width: 769px) {
