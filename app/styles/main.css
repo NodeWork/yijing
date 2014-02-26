@@ -110,7 +110,8 @@ a.gua-simple:hover {
 }
 
 
-/* ====================== */
+/* ====================== home page 64-gua*/
+
 .six-four .gua-simple .gua.small {
   width: 34px;
   display: inline-block;
@@ -136,6 +137,12 @@ a.gua-simple:hover {
   margin-left: -6px;
 }
 
+/* ====================== Gua page */
+.gua-container .row {
+   border-top: 3px solid #DDD;
+   padding-bottom: 50px;
+   padding-top: 20px;
+ }
 
 /* ====================== responsive */
 
