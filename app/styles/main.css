@@ -11,21 +11,23 @@ body {
 }
 
 .yin-yang {
-  background: url('/imgs/yin-and-yang.svg') no-repeat center top transparent;
-  /* opacity: 0.2; */
+  background: url('/imgs/yin-and-yang.svg') no-repeat left top transparent;
+  background-size: 50% 100%;
 }
 
 .six-four {
-  
+  margin-left: 51%;
+  background-color: white;
 }
 
 .yin-yang.small {
-  background-size: 20px 20px;
+  background-position: left center;
+  background-size: 30px 30px;
+  padding-left: 35px;
 }
 
 .gua {
-  border: 1px solid blue;
-
+  /* border: 1px solid blue; */
 }
 
 .gua .yang,
@@ -87,17 +89,18 @@ a.gua-simple:hover {
 /* ==================== Small */
 .gua.small .name {
   margin-left: 9px;
-  font-size: 11px;
+  margin-bottom: 2px;
+  font-size: 14px;
 }
 .gua.small .name2 {
-  margin-left: 5px;
-  font-size: 11px;
+  margin-left: 3px;
+  font-size: 14px;
 }
 
 .gua.small .yang,
 .gua.small .yin {
   margin-bottom: 3px;
-  height: 3px;
+  height: 2px;
   width: 30px;
 }
 
@@ -106,16 +109,57 @@ a.gua-simple:hover {
   border-right-width: 14px;
 }
 
+
 /* ====================== */
 .six-four .gua-simple .gua.small {
   width: 34px;
   display: inline-block;
 }
 
+.six-four table tr { 
+  border-right: 1px solid #ddd;
+}
+.six-four table tr:last-child { 
+  border-bottom: 1px solid #ddd;
+}
+
+.six-four table tr td { 
+  border-left: 1px solid #ddd;
+  width: 30px;
+  text-align: center;
+}
+
+.six-four .gua.small .name {
+  margin-left: -2px;
+}
+.six-four .gua.small .name2 {
+  margin-left: -6px;
+}
+
+
+/* ====================== responsive */
+
+@media (max-width: 769px) {
+  .yin-yang {
+    background-image: none;
+  }
+
+  .six-four {
+    margin-left: 0;
+  }
+
+}
+
 @media (max-width: 480px) {
+
   .six-four .gua-simple .gua .yin, 
   .six-four .gua-simple .gua .yang {
     display: none;
   }
+  .gua.small .name,
+  .gua.small .name2 {
+    font-size: 16px;
+  }
+
   
 }
