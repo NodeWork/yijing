@@ -1,4 +1,5 @@
 build:
+	grunt clean build
 	rm -rf _site
 	mkdir _site
 	cp -r dist/*.html dist/*.txt dist/*.ico dist/images dist/scripts dist/views dist/styles _site/
