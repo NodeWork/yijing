@@ -1,14 +1,31 @@
 @font-face {
   font-family: MingLiu;
-  src: local("MingLiu") local("MingLiu-ExtraB") url("MingLiu.ttf") format("truetype");
+  /* src: local("MingLiu") local("MingLiu-ExtraB") url("MingLiu.ttf") format("truetype"); */
+  src: url("MingLiu.ttf") format("truetype")
 }
 
 body {
-  font-family: MingLiu, "Helvetica Neue",Helvetica,Arial,sans-serif;
+  /* FIXME: why h2 style override body */
+  font-family: MingLiu, "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  padding-top: 60px;
+}
+
+.yin-yang {
+  background: url('/imgs/yin-and-yang.svg') no-repeat center top transparent;
+  /* opacity: 0.2; */
+}
+
+.six-four {
+  
+}
+
+.yin-yang.small {
+  background-size: 20px 20px;
 }
 
 .gua {
   border: 1px solid blue;
+
 }
 
 .gua .yang,
@@ -16,12 +33,14 @@ body {
   display: block;
   cursor: pointer;
 }
+
 .gua-simple .gua .yang,
 .gua-simple .gua .yin,
 .gua-simple .gua .name,
 .gua-simple .gua .name2 {
   cursor: auto;
 }
+
 a.gua-simple:hover {
   text-decoration: none;
 }
