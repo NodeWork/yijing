@@ -13,6 +13,7 @@
    function namedData () {
       var o = {};
       angular.forEach(yijing.datas, function (v, k) {
+         v.key = k;
          o[v.name] = v;
       });
       return o;

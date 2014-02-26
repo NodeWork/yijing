@@ -1,7 +1,15 @@
 (function (angular) {
    'use strict';
 
-   function normalizeInput (key, list) {
+   /**
+    * @param key {string} either 101010 or Gua name
+    * @param datas {object} which key is gua name;
+    */
+   function normalizeInput (key, datas) {
+      return parseInt(key) >= 0 ? key : datas[key].key;
+   }
+
+   function normalizeKey (key, list) {
       var xs = key.split(''),
           ys = xs.map(function (x) { return x % 2; });
       if (!list) {
@@ -21,7 +29,8 @@
                           };
          });
 
-         $scope.baseKey = normalizeInput($routeParams.key);
+         var k = normalizeInput($routeParams.key, guaService.namedData);
+         $scope.baseKey = normalizeKey(k);
 
          // show Gua info when input complete
          $scope.checkInputComplete = function () {
