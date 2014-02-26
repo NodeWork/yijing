@@ -7,7 +7,7 @@
             replace: true,
             restrict:'E',
             scope: { guaKey: '=', guaSize: '=' },
-            link: function(scope, element, attrs){
+            link: function(scope, element, attrs) {
                scope.guaSize = attrs.guaSize;
 
                // FIXME:
@@ -20,51 +20,48 @@
 
                var _doLink = function (guaKey) {
                   var key = guaKey,
-                   xs = key ? key.split('') : [];
-               scope.items = xs.map(function (x) {
-                  return { v: parseInt(x, 10),
-                           clazz: [(parseInt(x,10) === 1 ? 'yang' : 'yin')]
-                         };
-               });
-               var data = guaService.guaData(key);
-               //scope.guaData = data;
-               scope.showGuaInfo = true;
-               scope.vo = { name: data.name,
-                            guaCi: data.guaci,
-                            daXiang: data.daxiang, // Da Xiang
-                            tuanCi: data.tuan,     // Tuan
-                            yaoCi: '',        // Yao Ci
-                            xiaoXiang : ''     // Xiao Xiang
-                          };
-
-               scope.yaoClick = function (k) {
-                  scope.vo.yaoCi = data.yaoci[k];
-                  scope.vo.xiaoXiang = data.xiang[k];
-                  scope.showGuaInfo = false;
-                  angular.forEach(scope.items, function (v, i) {
-                     if (v.clazz.length > 1) {
-                        v.clazz.pop();
-                     }
-                     var a = (i+k===5) ? 'active' : 'inactive';
-                     v.clazz.push(a);
+                      xs = key ? key.split('') : [];
+                  scope.items = xs.map(function (x) {
+                     return { v: parseInt(x, 10),
+                              clazz: [(parseInt(x,10) === 1 ? 'yang' : 'yin')]
+                            };
                   });
-               };
-
-               scope.guaClick = function () {
+                  var data = guaService.guaData(key);
+                  //scope.guaData = data;
                   scope.showGuaInfo = true;
-                  angular.forEach(scope.items, function (v) {
-                     if (v.clazz.length > 1) {
-                        v.clazz.pop();
-                     }
-                  });
+                  scope.vo = { name: data.name,
+                               guaCi: data.guaci,
+                               daXiang: data.daxiang, // Da Xiang
+                               tuanCi: data.tuan,     // Tuan
+                               yaoCi: '',        // Yao Ci
+                               xiaoXiang : ''     // Xiao Xiang
+                             };
 
-               };
-               };
+                  scope.yaoClick = function (k) {
+                     scope.vo.yaoCi = data.yaoci[k];
+                     scope.vo.xiaoXiang = data.xiang[k];
+                     scope.showGuaInfo = false;
+                     angular.forEach(scope.items, function (v, i) {
+                        if (v.clazz.length > 1) {
+                           v.clazz.pop();
+                        }
+                        var a = (i+k===5) ? 'active' : 'inactive';
+                        v.clazz.push(a);
+                     });
+                  };
 
-               //_doLink(attrs.guaKey);
+                  scope.guaClick = function () {
+                     scope.showGuaInfo = true;
+                     angular.forEach(scope.items, function (v) {
+                        if (v.clazz.length > 1) {
+                           v.clazz.pop();
+                        }
+                     });
+
+                  };
+               };
 
                scope.$watch('guaKey', function (newValue, oldValue) {
-                  //console.log("New Value", newValue, oldValue);
                   _doLink(newValue);
                });
             },
@@ -84,16 +81,16 @@
 
                var _doLink = function (guaKey) {
                   var key = guaKey,
-                   xs = key ? key.split('') : [];
-               scope.items = xs.map(function (x) {
-                  return { v: parseInt(x, 10),
-                           clazz: [(parseInt(x,10) === 1 ? 'yang' : 'yin')]
-                         };
-               });
-               var data = guaService.guaData(key);
-               scope.vo = { name: data.name,
-                            urlPath: '#gua/' + key
-                          };
+                      xs = key ? key.split('') : [];
+                  scope.items = xs.map(function (x) {
+                     return { v: parseInt(x, 10),
+                              clazz: [(parseInt(x,10) === 1 ? 'yang' : 'yin')]
+                            };
+                  });
+                  var data = guaService.guaData(key);
+                  scope.vo = { name: data.name,
+                               urlPath: '#gua/' + key //FIXME: move 'gua' as a constant
+                             };
 
                };
 

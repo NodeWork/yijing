@@ -10,17 +10,17 @@ angular.module('yijing', [
            templateUrl: '/views/main.html',
            controller: 'MainCtrl'
         })
+        //.when('/tmp/:key', {
+        //   templateUrl: '/views/gua-page.html',
+        //   controller: 'GuaCtrl'
+        //})
         .when('/gua/:key', {
            templateUrl: '/views/gua-page.html',
            controller: 'GuaCtrl'
         })
-        .when('/result/:key', {
-           templateUrl: '/views/result-page.html',
-           controller: 'ResultCtrl'
-        })
-        .when('/result', {
-           templateUrl: '/views/result-page.html',
-           controller: 'ResultCtrl'
+        .when('/gua', {
+           templateUrl: '/views/gua-page.html',
+           controller: 'GuaCtrl'
         })
         .otherwise({
            redirectTo: '/'
