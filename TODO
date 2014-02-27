@@ -1,6 +1,6 @@
 # TODO
 
-- [] include bootstrap.js
+- [X] include bootstrap.js
 - [] loading svg icon
 - [] mobile `hamer.js`
 - [] ng-animation?
