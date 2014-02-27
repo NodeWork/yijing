@@ -1,7 +1,7 @@
 @font-face {
   font-family: MingLiu;
-  /* src: local("MingLiu") local("MingLiu-ExtraB") url("MingLiu.ttf") format("truetype"); */
-  src: url("MingLiu.ttf") format("truetype")
+  src: local("MingLiu") local("MingLiu-ExtraB") ;
+  /* src: url("MingLiu.ttf") format("truetype") */
 }
 
 body {
