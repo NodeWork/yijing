@@ -1,7 +1,9 @@
 # TODO
 
 - [X] include bootstrap.js
-- [] loading svg icon
+- [X] busy svg icon
+  + via css3
+- [] use less
 - [] mobile `hamer.js`
 - [] ng-animation?
 - [] custome bootstrap in terms of rm un-used CSS and JS

@@ -5,12 +5,48 @@
 }
 
 body {
-  /* FIXME: why h2 style override body */
+  -webkit-font-smoothing: antialiased;
   padding-top: 60px;
 }
 
+/* FIXME: why h2 style override body */
 body,h1,h2,h3,pre {
   font-family: MingLiu, "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+.fa-spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+.loading {
+  background: url('/images/yin-and-yang.svg') no-repeat left top transparent;
+  background-size: 30px 30px;
+  display: block;
+  height: 30px;
+  width: 30px;
+  margin-left: 50%;
+  margin-top: 30px;
+  
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
 }
 
 .yin-yang {
