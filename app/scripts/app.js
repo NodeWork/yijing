@@ -6,14 +6,14 @@ angular.module('yijing', [
 ])
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
      $routeProvider
+
+     // ===== Home page
         .when('/', {
            templateUrl: '/views/main.html',
            controller: 'MainCtrl'
         })
-        //.when('/tmp/:key', {
-        //   templateUrl: '/views/gua-page.html',
-        //   controller: 'GuaCtrl'
-        //})
+
+     // ===== single gua main page
         .when('/gua/:key', {
            templateUrl: '/views/gua-page.html',
            controller: 'GuaCtrl'
@@ -22,6 +22,8 @@ angular.module('yijing', [
            templateUrl: '/views/gua-page.html',
            controller: 'GuaCtrl'
         })
+
+     // ===== docs generated from yijing.datas
         .when('/doc/:type/:index', {
            templateUrl: '/views/doc.html',
            controller: 'DocCtrl'
@@ -29,25 +31,12 @@ angular.module('yijing', [
 
      // ===== static docs
 
-        .when('/xici-1', {
-           templateUrl: '/views/docs/xici-1.html'
-        })
-        .when('/xici-2', {
-           templateUrl: '/views/docs/xici-2.html'
-        })
-        .when('/wen-yan', {
-           templateUrl: '/views/docs/wen-yan.html'
-        })
-        .when('/shuo-gua', {
-           templateUrl: '/views/docs/shuo-gua.html'
-        })
-        .when('/xu-gua', {
-           templateUrl: '/views/docs/xu-gua.html'
-        })
-        .when('/za-gua', {
-           templateUrl: '/views/docs/za-gua.html'
+        .when('/static/:name', {
+           templateUrl: '/views/tmp.html',
+           controller: 'StaticDocCtrl'
         })
 
+     // ===== Otherwises
         .otherwise({
            redirectTo: '/'
         });

@@ -88,19 +88,18 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <!-- <li><a href="#/gua/101001">Result</a></li> -->
-              <li><a href="#/doc/yijing/2">易經下</a></li>
+              <li><a href="#/doc/yijing/1">易經上</a></li>
               <li><a href="#/doc/yijing/2">易經下</a></li>
               <li><a href="#/doc/tuan/1">彖傳上</a></li>
               <li><a href="#/doc/tuan/2">彖傳下</a></li>
               <li><a href="#/doc/xiang/1">象傳上</a></li>
               <li><a href="#/doc/xiang/2">象傳下</a></li>
-              <li><a href="#/doc/xiang/2">象傳下</a></li>
-              <li><a href="#/xici-1">系辭上</a></li>
-              <li><a href="#/xici-2">系辭下</a></li>
-              <li><a href="#/wen-yan">文言傳</a></li>
-              <li><a href="#/shuo-gua">說卦傳</a></li>
-              <li><a href="#/xu-gua">序卦傳</a></li>
-              <li><a href="#/za-gua">雜卦傳</a></li>
+              <li><a href="#/static/xici-1">系辭上</a></li>
+              <li><a href="#/static/xici-2">系辭下</a></li>
+              <li><a href="#/static/wen-yan">文言傳</a></li>
+              <li><a href="#/static/shuo-gua">說卦傳</a></li>
+              <li><a href="#/static/xu-gua">序卦傳</a></li>
+              <li><a href="#/static/za-gua">雜卦傳</a></li>
           </ul>
 
         </div><!--/.nav-collapse -->
@@ -109,9 +108,9 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-        <ng-view >
+        <div id="view" ng-view>
             <i class="loading"></i>
-        </ng-view>
+        </div>
 
         <hr/>
         <footer class="footer">

@@ -1,4 +1,4 @@
-(function (angular) {
+(function (angular, $) {
    'use strict';
 
    function fetchValueOnType (type, datas) {
@@ -19,7 +19,9 @@
    }
 
    angular.module('yijing')
-      .controller('DocCtrl',['$scope', '$routeParams', 'guaService', function ($scope, $routeParams, guaService) {
+      .controller('DocCtrl',
+                  [         '$scope', '$routeParams', 'guaService',
+                   function ($scope,   $routeParams,   guaService) {
          var type = $routeParams.type,
              index = $routeParams.index || 1;
 
@@ -27,5 +29,20 @@
          $scope.docs = fetchData(guaService.namedData, guaService.jings[index-1], type);
          $scope.guaUrl = function (n) { return '#gua/'+n; };
       }])
+
+   /**
+    * Ctrl for loading static template
+    */
+      .controller('StaticDocCtrl',
+                  [         '$scope', '$http', '$compile', '$route', '$routeParams',
+                   function ($scope,   $http,   $compile,   $route,   $routeParams) {
+
+                      $route.current.templateUrl = '/views/docs/' + $routeParams.name + ".html";
+
+                      $http.get($route.current.templateUrl).then(function (msg) {
+                         $('#view').html($compile(msg.data)($scope));
+                      });
+                   }])
+
       ;
-})(angular);
+})(angular, jQuery);
