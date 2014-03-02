@@ -38,10 +38,14 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
-      styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
-      },
+      //styles: {
+      //  files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
+      //  tasks: ['newer:copy:styles', 'autoprefixer']
+      //},
+       less: {
+         files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
+         tasks: ['less:dev']
+       },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -279,6 +283,16 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
+     less: {
+        dev: {
+           options: {
+              paths: ["<%= yeoman.app %>/styles"]
+           },
+           files: {
+              "<%= yeoman.app %>/styles/main.css": "<%= yeoman.app %>/styles/main.less"
+           }
+        }
+     },
 
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish

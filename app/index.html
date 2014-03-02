@@ -29,7 +29,7 @@
     <!-- ngTemplates -->
     <script type="text/ng-template" id="gua.html">
     <div>
-      <div class="col-sm-4 gua {{guaSize}}">
+      <div class="col-sm-3 gua {{guaSize}}">
         <label ng-class="vo.name.length === 1 ? 'name' : 'name2'" ng-click="guaClick()">{{vo.name}}</label>
         <span ng-repeat="item in items"
               class="{{item.clazz}}"
@@ -37,7 +37,7 @@
               >
         </span>
       </div>
-      <div class="col-sm-4 explnation">
+      <div class="col-sm-7 explnation">
         <section name="guaCi" ng-show="showGuaInfo">
           <h2>卦辞</h2>
           <p>{{vo.guaCi}}</p>

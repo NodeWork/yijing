@@ -1,0 +1,21 @@
+@font-face {
+  font-family: MingLiu;
+  src: local("MingLiu") local("MingLiu-ExtraB") ;
+  /* src: url("MingLiu.ttf") format("truetype") */
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  padding-top: 60px;
+}
+
+/* FIXME: why h2 style override body */
+body,h1,h2,h3,pre {
+  font-family: MingLiu, "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+@import "_animation.less";
+@import "_icon.less";
+@import "_gua.less";
+@import "_pages.less";
+@import "_responsive.less";
