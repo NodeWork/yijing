@@ -40,7 +40,7 @@ module.exports = function (grunt) {
       },
        less: {
           files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
-          tasks: ['less:dev']
+          tasks: ['less:dev', 'less:bootstrap']
        },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -150,9 +150,6 @@ module.exports = function (grunt) {
         ignorePath: '<%= yeoman.app %>/'
       }
     },
-
-
-
 
 
     // Renames files for browser caching purposes
@@ -291,6 +288,15 @@ module.exports = function (grunt) {
            files: {
               "<%= yeoman.app %>/styles/main.css": "<%= yeoman.app %>/styles/main.less"
            }
+        },
+        // custom bootstrap
+        bootstrap: {
+           options: {
+              paths: ["<%= yeoman.app %>/styles"]
+           },
+           files: {
+              "<%= yeoman.app %>/styles/bootstrap.css": "<%= yeoman.app %>/styles/bootstrap.less"
+           }
         }
      },
 
@@ -360,6 +366,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+     'less:bootstrap',
+     'less:dev',
 //    'bower-install',
     'useminPrepare',
     'concurrent:dist',
