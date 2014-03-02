@@ -38,14 +38,14 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
-      //styles: {
-      //  files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-      //  tasks: ['newer:copy:styles', 'autoprefixer']
-      //},
        less: {
-         files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
-         tasks: ['less:dev']
+          files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
+          tasks: ['less:dev']
        },
+      styles: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
+        tasks: ['newer:copy:styles', 'autoprefixer']
+      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
