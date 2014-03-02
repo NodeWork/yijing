@@ -70,11 +70,15 @@
    }
 
    function transform (key) {
-      return { base : key,
-               zong : {name: "綜卦", key: zongGua(key)},
-               cuo  : {name: "錯卦", key: cuoGua(key)},
-               jiao : {name: "交卦", key: jiaoGua(key)}
-             };
+      var xs = { base : {key: key},
+                 zong : {type: "綜卦", key: zongGua(key)},
+                 cuo  : {type: "錯卦", key: cuoGua(key)},
+                 jiao : {type: "交卦", key: jiaoGua(key)}
+               };
+      angular.forEach(xs, function (value, k) {
+         value.name = getGuaData(value.key).name;
+      });
+      return xs;
    }
 
    angular.module('yijing')

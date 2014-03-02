@@ -14,7 +14,7 @@ angular.module('yijing', [
         })
 
      // ===== single gua main page
-        .when('/gua/:key', {
+        .when('/gua/:name', {
            templateUrl: '/views/gua-page.html',
            controller: 'GuaCtrl'
         })

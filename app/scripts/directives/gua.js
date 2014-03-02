@@ -23,10 +23,14 @@
                       xs = key ? key.split('') : [];
                   // FIXME: duplicated function (generate Yang/Yin Yaos)
                   scope.items = xs.map(function (x) {
-                     return { v: parseInt(x, 10),
-                              clazz: [(parseInt(x,10) === 1 ? 'yang' : 'yin')]
-                            };
+                     var o = {
+                        clazzList: [ x === '1' ? 'yang' : 'yin' ]
+                     };
+                     o.clazz = o.clazzList.join(' ');
+                     return o;
                   });
+
+                  console.log(scope.items);
                   var data = guaService.guaData(key);
                   //scope.guaData = data;
                   scope.showGuaInfo = true;
@@ -43,22 +47,23 @@
                      scope.vo.xiaoXiang = data.xiang[k];
                      scope.showGuaInfo = false;
                      angular.forEach(scope.items, function (v, i) {
-                        if (v.clazz.length > 1) {
-                           v.clazz.pop();
+                        if (v.clazzList.length > 1) {
+                           v.clazzList.pop();
                         }
                         var a = (i+k===5) ? 'active' : 'inactive';
-                        v.clazz.push(a);
+                        v.clazzList.push(a);
+                        v.clazz = v.clazzList.join(' ');
                      });
                   };
 
                   scope.guaClick = function () {
                      scope.showGuaInfo = true;
                      angular.forEach(scope.items, function (v) {
-                        if (v.clazz.length > 1) {
-                           v.clazz.pop();
+                        if (v.clazzList.length > 1) {
+                           v.clazzList.pop();
                         }
+                        v.clazz = v.clazzList.join(' ');
                      });
-
                   };
                };
 
@@ -88,8 +93,7 @@
                       xs = key ? key.split('') : [],
                       // FIXME: duplicated function (generate Yang/Yin Yaos)
                       items = xs.map(function (x) {
-                         return { v: parseInt(x, 10),
-                                  clazz: x === '1' ? 'yang' : 'yin'
+                         return { clazz: x === '1' ? 'yang' : 'yin'
                                 };
                       });
                   var data = guaService.guaData(key);

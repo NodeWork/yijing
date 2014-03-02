@@ -2,13 +2,16 @@
    'use strict';
 
    /**
-    * @param key {string} either 101010 or Gua name
+    * @param key {string} either Gua name.
     * @param datas {object} which key is gua name;
     */
    function normalizeInput (key, datas) {
       return parseInt(key) >= 0 ? key : datas[key].key;
    }
 
+   /**
+    * Allow use 6,7,8,9 as key value
+    */
    function normalizeKey (key, list) {
       var xs = key.split(''),
           ys = xs.map(function (x) { return x % 2; });
@@ -29,7 +32,7 @@
                           };
          });
 
-         var k = normalizeInput($routeParams.key, guaService.namedData);
+         var k = normalizeInput($routeParams.name, guaService.namedData);
          $scope.baseKey = normalizeKey(k);
 
          // show Gua info when input complete
