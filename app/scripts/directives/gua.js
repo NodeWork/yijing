@@ -85,16 +85,18 @@
 
                var _doLink = function (guaKey) {
                   var key = guaKey,
-                      xs = key ? key.split('') : [];
-                  // FIXME: duplicated function (generate Yang/Yin Yaos)
-                  scope.items = xs.map(function (x) {
-                     return { v: parseInt(x, 10),
-                              clazz: [(parseInt(x,10) === 1 ? 'yang' : 'yin')]
-                            };
-                  });
+                      xs = key ? key.split('') : [],
+                      // FIXME: duplicated function (generate Yang/Yin Yaos)
+                      items = xs.map(function (x) {
+                         return { v: parseInt(x, 10),
+                                  clazz: x === '1' ? 'yang' : 'yin'
+                                };
+                      });
                   var data = guaService.guaData(key);
                   scope.vo = { name: data.name,
-                               urlPath: '#gua/' + data.name //FIXME: move 'gua' as a constant
+                               urlPath: '#gua/' + data.name, //FIXME: move 'gua' as a constant
+                               labelStyle: data.name.length === 1 ? 'name' : 'name2',
+                               items: items
                              };
 
                };
