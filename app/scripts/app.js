@@ -71,9 +71,12 @@ angular.module('yijing', [
              if (route.$$route.originalPath === '/gua/:name') {
                 t = route.params.name + '卦';
              } else {
-                angular.forEach(navs, function (value, k) {
+                angular.forEach($rootScope.navs, function (value, k) {
                    if (value.url === '#' + url) {
                       t = value.title;
+                      value.clazz = 'active';
+                   } else {
+                      value.clazz = '';
                    }
                 });
              }
@@ -85,9 +88,6 @@ angular.module('yijing', [
              doc.title = title + (!!name ? ' - ' + name : '');
           };
       $rootScope.$on('$routeChangeSuccess', function(events, newRoute) {
-         //var url = decodeURI($location.url());
-         //console.log($route.current);
-         //console.log(url);
 
          updatePageTitle();
          $rootScope.loading = false;

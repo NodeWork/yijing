@@ -84,7 +84,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav" id="navs">
-                <li ng-repeat="item in navs">
+                <li ng-repeat="item in navs" class="{{item.clazz}}">
                     <a ng-href="{{item.url}}">{{item.title}}</a>
                 </li>
           </ul>
