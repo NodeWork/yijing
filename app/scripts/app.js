@@ -45,7 +45,9 @@ angular.module('yijing', [
   }])
 
    .run(function ($rootScope, $anchorScroll) {
+      $rootScope.loading = true;
       $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+         $rootScope.loading = false;
          $anchorScroll();
       });
    });
