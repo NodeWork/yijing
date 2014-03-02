@@ -30,7 +30,6 @@
                      return o;
                   });
 
-                  console.log(scope.items);
                   var data = guaService.guaData(key);
                   //scope.guaData = data;
                   scope.showGuaInfo = true;

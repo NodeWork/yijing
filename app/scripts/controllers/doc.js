@@ -28,6 +28,7 @@
          $scope.start = (index - 1) * 30 + 1;
          $scope.docs = fetchData(guaService.namedData, guaService.jings[index-1], type);
          $scope.guaUrl = function (n) { return '#gua/'+n; };
+
       }])
 
    /**
@@ -42,6 +43,7 @@
                       $http.get($route.current.templateUrl).then(function (msg) {
                          $('#view').html($compile(msg.data)($scope));
                       });
+
                    }])
 
       ;

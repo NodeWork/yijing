@@ -23,7 +23,9 @@
    }
 
    angular.module('yijing')
-      .controller('GuaCtrl',['$scope', '$routeParams', 'guaService', function ($scope, $routeParams, guaService) {
+      .controller('GuaCtrl',
+                  [        '$scope', '$routeParams', 'guaService',
+                  function ($scope,   $routeParams,   guaService) {
 
          $scope.$watch('baseKey', function (newV, oldV) {
             var obj = guaService.transform(newV);
@@ -43,6 +45,7 @@
             ys.reverse();
             $scope.baseKey = ys.join('');
          };
+
       }]);
 
 })(angular);

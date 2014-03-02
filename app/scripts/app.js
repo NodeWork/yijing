@@ -42,4 +42,11 @@ angular.module('yijing', [
         });
 
      //$locationProvider.html5Mode(true);
-  }]);
+  }])
+
+   .run(function ($rootScope, $anchorScroll) {
+      $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+         $anchorScroll();
+      });
+   });
+;
