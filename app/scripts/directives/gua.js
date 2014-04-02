@@ -744,7 +744,7 @@ Public License instead of this License.  But first, please read
                   };
                };
 
-               scope.$watch('guaKey', function (newValue, oldValue) {
+               scope.$watch('guaKey', function (newValue /*oldValue*/) {
                   _doLink(newValue);
                });
             },
@@ -770,9 +770,9 @@ Public License instead of this License.  But first, please read
                       xs = key ? key.split('') : [],
                       // FIXME: duplicated function (generate Yang/Yin Yaos)
                       items = xs.map(function (x) {
-                         return { clazz: x === '1' ? 'yang' : 'yin'
-                                };
-                      });
+                           return { clazz: x === '1' ? 'yang' : 'yin'
+                                  };
+                        });
                   var data = guaService.guaData(key);
                   scope.vo = { name: data.name,
                                urlPath: '#gua/' + data.name, //FIXME: move 'gua' as a constant
@@ -782,7 +782,7 @@ Public License instead of this License.  But first, please read
 
                };
 
-               scope.$watch('guaKey', function (newValue, oldValue) {
+               scope.$watch('guaKey', function (newValue  /*oldValue*/ ) {
                   _doLink(newValue);
                });
             },

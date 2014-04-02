@@ -703,24 +703,24 @@ Public License instead of this License.  But first, please read
     */
    function getSixFourGuas () {
        /* Generate 64 Guas base on XianTian-8-Gua */
-       var gua8 = yijing.xianTian8Gua.map(function (o) { return o.key; }),
-           length = gua8.length-1,
-           i = length,
-           k,
-           key,
-           o,
-           xs = [];
-       for (;i >= 0; i--) {
-          for (var j=length; j >= 0; j--) {
-             k = length - i;
-             if (!xs[k]) {
-                xs[k] = [];
-             }
-             key = gua8[j] + gua8[i];
-             o = getGuaData(key);
-             xs[k].push({key:key, name: o.name});
-          }
-       }
+      var gua8 = yijing.xianTian8Gua.map(function (o) { return o.key; }),
+          length = gua8.length-1,
+          i = length,
+          k,
+          key,
+          o,
+          xs = [];
+      for (;i >= 0; i--) {
+         for (var j=length; j >= 0; j--) {
+            k = length - i;
+            if (!xs[k]) {
+               xs[k] = [];
+            }
+            key = gua8[j] + gua8[i];
+            o = getGuaData(key);
+            xs[k].push({key:key, name: o.name});
+         }
+      }
 
       return xs;
    }
@@ -749,11 +749,11 @@ Public License instead of this License.  But first, please read
 
    function transform (key) {
       var xs = { base : {key: key},
-                 zong : {type: "綜卦", key: zongGua(key)},
-                 cuo  : {type: "錯卦", key: cuoGua(key)},
-                 jiao : {type: "交卦", key: jiaoGua(key)}
+                 zong : {type: '綜卦', key: zongGua(key)},
+                 cuo  : {type: '錯卦', key: cuoGua(key)},
+                 jiao : {type: '交卦', key: jiaoGua(key)}
                };
-      angular.forEach(xs, function (value, k) {
+      angular.forEach(xs, function (value) {
          value.name = getGuaData(value.key).name;
       });
       return xs;
