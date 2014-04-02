@@ -1,0 +1,39 @@
+<!-- <style type="text/css" media="screen">
+input {
+width: 80px;
+height: 35px;
+display: block;
+margin-top: 5px;
+}
+</style> -->
+
+<div class="gua-container">
+
+    <h1 class="hide">{{guas.base.name}}卦</h1>
+    <h2>主卦</h2>
+    <div class="row">
+        <div class="col-sm-2" id="user-inputs" style="padding-top: 50px; display:none;">
+            <input tabindex="6" type="number" min="6" max="9" ng-blur="checkInputComplete()">
+            <input tabindex="5" type="number" min="6" max="9" ng-blur="checkInputComplete()">
+            <input tabindex="4" type="number" min="6" max="9" ng-blur="checkInputComplete()">
+            <input tabindex="3" type="number" min="6" max="9" ng-blur="checkInputComplete()">
+            <input tabindex="2" type="number" min="6" max="9" ng-blur="checkInputComplete()">
+            <input tabindex="1" type="number" min="6" max="9" autofocus >
+        </div>
+        <div class="col-sm-10 col-sm-offset-2">
+            <gua gua-size="large" gua-key="guas.base.key" ng-show="baseKey"></gua>
+        </div>
+    </div>
+
+    <div ng-repeat="item in guas.xs ">
+
+        <h2><a ng-href="#/gua/{{item.name}}">{{item.type}}</a></h2>
+
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-2">
+                <gua gua-size="large" gua-key="item.key" ng-show="baseKey"></gua>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,50 +1,13 @@
+build:
+	grunt clean build
+	rm -rf _site
+	mkdir _site
+	cp -r dist/*.html dist/*.txt dist/*.ico dist/images dist/scripts dist/views dist/styles _site/
+	mkdir -p _site/bower_components/es5-shim _site/bower_components/json3/lib/
+	cp dist/bower_components/es5-shim/es5-shim.min.js _site/bower_components/es5-shim/es5-shim.min.js
+	cp dist/bower_components/json3/lib/json3.min.js  _site/bower_components/json3/lib/json3.min.js
+	cp gzall.pl _site/
 
-DIST=_site
-APP=yijing
-
-jquery=jquery-1.7.2.min.js
-mainFiles=bootstrap-dropdown.js jCanvaScript.js data.js yijing.js
-mainjs=main.js
-
-default: clean
-
-p:
-	supervisor -w .,routes,views app.js
-
-clean:
-	rm -rf $(DIST)
-
-###
-### To be simple, all JS files under main fold will be merge into a single named main.js
-### TODO: add checksum sufix.
-### 
-build: clean
-	mkdir -p $(DIST)
-	cp -r *.js *.json public/ routes/ views/ node_modules/ $(DIST)
-
-	cd $(DIST)/public/javascripts/ && for x in *.js ; do \
-		uglifyjs $$x > $$x.min.js && rm $$x ; \
-		mv -f $$x.min.js $$x ; \
-	done
-
-	cd $(DIST)/public/javascripts/main/ \
-	   && cat $(jquery) > $(mainjs) \
-	   && rm $(jquery)
-
-	cd $(DIST)/public/javascripts/main && for x in $(mainFiles) ; do \
-		uglifyjs $$x >> $(mainjs); \
-	    echo >> $(mainjs); \
-	    rm $$x; \
-	done
-
-	cd $(DIST)/views/layout/ \
-	  && echo 'script(src="/javascripts/main/main.js")' > layout-js.jade
-
-prod-prev: build
-	cd $(DIST) && NODE_ENV=production node app.js
-
-vmc: build
-	vmc update $(APP) --path $(DIST) --runtime =node06
-
-jitsu: build
-	cd $(DIST) && jitsu deploy
+deploy: build
+	rsync -c -r -ave 'ssh' _site/* freizl_duyijing@ssh.phx.nearlyfreespeech.net:/home/public
+	#scp -r _site/* freizl_duyijing@ssh.phx.nearlyfreespeech.net:/home/public/

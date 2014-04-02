@@ -1,0 +1,152 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>读易经</title>
+    <meta name="description" content="学习易经,传承中华文化,快速查阅易经的卦辞,爻辞">
+    <meta name="keywords" content="duyijing,yijing,ichang,十翼,周易,易经,读易经">
+    <meta name="author" content="HaishengWu,Freizl">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" href="styles/bootstrap.css" />
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" /> -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="yijing">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- ngTemplates -->
+    <script type="text/ng-template" id="gua.html">
+    <div>
+      <div class="col-sm-3 gua {{guaSize}}">
+        <label ng-class="vo.name.length === 1 ? 'name' : 'name2'" ng-click="guaClick()">{{vo.name}}</label>
+        <span ng-repeat="item in items"
+              class="{{item.clazz}}"
+              ng-click="yaoClick(5-$index)"
+              >
+        </span>
+      </div>
+      <div class="col-sm-7 explnation">
+        <section name="guaCi" ng-show="showGuaInfo">
+          <h2>卦辞</h2>
+          <p>{{vo.guaCi}}</p>
+        </section>
+        <section name="daXiang" ng-show="showGuaInfo">
+          <h2>大象</h2>
+          <p>{{vo.daXiang}}</p>
+        </section>
+        <section name="tuanCi" ng-show="showGuaInfo">
+          <h2>彖辞</h2>
+          <p>{{vo.tuanCi}}</p>
+        </section>
+        <section name="yaoCi" ng-show="!showGuaInfo">
+          <h2>爻辞</h2>
+          <p>{{vo.yaoCi}}</p>
+        </section>
+        <section name="xiaoXiang" ng-show="!showGuaInfo">
+          <h2>小象</h2>
+          <p>{{vo.xiaoXiang}}</p>
+        </section>
+      </div>
+    </div>
+    </script>
+
+    <script type="text/ng-template" id="gua-simple.html">
+      <a ng-href="{{ vo.urlPath }}" class="gua-simple">
+          <section class="gua {{guaSize}}">
+              <label ng-class="vo.labelStyle" >{{vo.name}}</label>
+              <span ng-repeat="item in vo.items"
+                    class="{{item.clazz}}" >
+              </span>
+          </section>
+      </a>
+    </script>
+    <!-- ngTemplates -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand yin-yang small" href="#">讀易經</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" id="navs">
+                <li ng-repeat="item in navs" class="{{item.clazz}}">
+                    <a ng-href="{{item.url}}">{{item.title}}</a>
+                </li>
+          </ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <!-- Add your site or application content here -->
+    <div class="container">
+        <i class="loading" ng-show="loading"></i>
+        <div id="view" ng-view>
+        </div>
+
+        <hr/>
+        <footer class="footer">
+            <p>
+              <span>© 2012-2014 HaishengWu </span>
+              <a href="http://weibo.com/freizl/" title="任何问题和建议请联系微薄">报告问题和建议</a>
+              <a href="https://me.alipay.com/freizl/">赞助</a>
+            </p>
+
+        </footer>
+    </div>
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-6496210-6', 'duyijing.cn');
+      ga('send', 'pageview');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/js/collapse.js"></script>
+    <script src="bower_components/bootstrap/js/transition.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/js/collapse.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="data/data-tranditional.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/directives/gua.js"></script>
+        <script src="scripts/services/gua.js"></script>
+        <script src="scripts/controllers/gua.js"></script>
+        <script src="scripts/controllers/doc.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

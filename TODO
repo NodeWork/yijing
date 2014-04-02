@@ -1,6 +1,29 @@
+# TODO
+
+- [X] include bootstrap.js
+- [X] busy svg icon
+  + via css3
+- [] Performance!!
+- [X] Update page title per page
+- [] use less
+- [] mobile `hamer.js`
+- [] ng-animation?
+- [X] Single Ctrl for static docs
+- [] custome bootstrap in terms of rm un-used CSS and JS
+- [] stylish static docs
+
+# SEO
+
+  - <http://www.yearofmoo.com/2012/11/angularjs-and-seo.html>
+  - Implementation ideas
+    + Make a crawle via phantomjs to localhost dev as snapshots
+    + Upload those snapnhots to static server as well
+    + Update .htaccess file
+
+# OLD
+
 - [X] cache and PRODUCTION env.
   Seems Nignx has done this yet. otherwise check nodeclub for example.
-
 - [ ] style
     - show / hide via transition.
 - [ ] gua on the circle
@@ -12,8 +35,12 @@
 
 use <http://zeptojs.com/>
 
-## MISC
+# MISC
 
 1. offline site
  (manifest="/cache.manifest")
+ 
+# Tools
+
+- <http://iconverticons.com/online/>
 

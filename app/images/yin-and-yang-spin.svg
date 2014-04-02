@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="466" height="466">
+
+    <circle cx="233" cy="233" r="231">
+        <animateTransform attributeType="xml"
+                          attributeName="transform"
+                          type="rotate"
+                          from="0 233 233"
+                          to="360 233 233"
+                          dur="4s"
+                          repeatCount="indefinite">
+        </animateTransform>
+    </circle>
+
+    <path d="M 233,459 a 226 226 0 0 1 0,-452 a 113 113 0 0 1 0,226 z" fill="#fff">
+        <animateTransform attributeType="xml"
+                          attributeName="transform"
+                          type="rotate"
+                          from="0 233 233"
+                          to="360 233 233"
+                          dur="4s"
+                          repeatCount="indefinite">
+        </animateTransform>
+    </path>
+    <circle cx="233" cy="346" r="113" fill="#000">
+        <animateTransform attributeType="xml"
+                          attributeName="transform"
+                          type="rotate"
+                          from="0 233 233"
+                          to="360 233 233"
+                          dur="4s"
+                          repeatCount="indefinite">
+        </animateTransform>
+    </circle>
+    <circle cx="233" cy="120" r="30">
+        <animateTransform attributeType="xml"
+                          attributeName="transform"
+                          type="rotate"
+                          from="0 233 233"
+                          to="360 233 233"
+                          dur="4s"
+                          repeatCount="indefinite">
+        </animateTransform>
+    </circle>
+    <circle cx="233" cy="346" r="30" fill="#fff">
+        <animateTransform attributeType="xml"
+                          attributeName="transform"
+                          type="rotate"
+                          from="0 233 233"
+                          to="360 233 233"
+                          dur="4s"
+                          repeatCount="indefinite">
+        </animateTransform>
+    </circle>
+
+</svg>
