@@ -545,3 +545,10 @@ FileETag None
 # <IfModule mod_headers.c>
 #    Header set Connection Keep-Alive
 # </IfModule>
+
+
+# ------------
+# Prerender.io Token
+# ------------
+RequestHeader set X-Prerender-Token "pnDb0LXAwcfhmlNRP68K"
+
