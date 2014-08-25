@@ -744,6 +744,7 @@ Public License instead of this License.  But first, please read
                                      ];
          var doc = $document[0],
              title = doc.title,
+             //Update page title per url change. Would be either Gua name or chapter name.
              getPageSubTitle = function () {
                 var url = decodeURI($location.url()),
                     route = $route.current,
