@@ -753,7 +753,7 @@ Public License instead of this License.  But first, please read
                    t = route.params.name + '卦';
                 } else {
                    angular.forEach($rootScope.navs, function (value, k) {
-                      if (value.url === '#' + url) {
+                      if (value.url === '#!' + url) {
                          t = value.title;
                          value.clazz = 'active';
                       } else {
