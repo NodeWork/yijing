@@ -10,4 +10,6 @@ build:
 
 deploy: build
 	rsync -c -r -ave 'ssh' _site/* freizl_duyijing@ssh.phx.nearlyfreespeech.net:/home/public
-	#scp -r _site/* freizl_duyijing@ssh.phx.nearlyfreespeech.net:/home/public/
+	
+htaccess:
+	scp -r _site/.htaccess freizl_duyijing@ssh.phx.nearlyfreespeech.net:/home/public/
