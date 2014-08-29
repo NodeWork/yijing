@@ -14,11 +14,7 @@
 
 # SEO
 
-  - <http://www.yearofmoo.com/2012/11/angularjs-and-seo.html>
-  - Implementation ideas
-    + Make a crawle via phantomjs to localhost dev as snapshots
-    + Upload those snapnhots to static server as well
-    + Update .htaccess file
+  - <prerender.io>
 
 # OLD
 

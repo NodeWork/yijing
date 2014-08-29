@@ -145,7 +145,8 @@ p {
 }
 .footer p,
 .footer span {
-  font-size: 14px;
+  font-size: 11px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 /* ====================== home page 64-gua*/
 .six-four {
