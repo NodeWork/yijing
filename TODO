@@ -3,33 +3,22 @@
 - [X] include bootstrap.js
 - [X] busy svg icon
   + via css3
-- [] Performance!!
+- [ ] Performance!!
 - [X] Update page title per page
-- [] use less
-- [] mobile `hamer.js`
-- [] ng-animation?
+- [X] use less
+- []  mobile `hamer.js`
+- [ ] ng-animation?
 - [X] Single Ctrl for static docs
-- [] custome bootstrap in terms of rm un-used CSS and JS
+- [X] custome bootstrap in terms of rm un-used CSS and JS
 - [] stylish static docs
-
-# SEO
-
-  - <prerender.io>
-
-# OLD
-
-- [X] cache and PRODUCTION env.
-  Seems Nignx has done this yet. otherwise check nodeclub for example.
-- [ ] style
-    - show / hide via transition.
-- [ ] gua on the circle
 - [ ] XianTian 8Gua Map
 - [ ] Maybe HouTian 8Gua Map
 - [ ] about page for some common things
       (gua, yao, ZongGua, JiaoGua, etc.)
-- [ ] simplified bootstrap.css
 
-use <http://zeptojs.com/>
+# SEO
+
+  - <prerender.io>
 
 # MISC
 
