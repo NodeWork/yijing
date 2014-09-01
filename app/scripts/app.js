@@ -727,7 +727,8 @@ Public License instead of this License.  But first, please read
 
       }])
 
-      .run(['$rootScope', '$anchorScroll', '$location', '$route', '$document', function ($rootScope, $anchorScroll, $location, $route, $document) {
+      .run(['$rootScope', '$anchorScroll', '$location', '$route', '$document', '$window',
+        function ($rootScope, $anchorScroll, $location, $route, $document, $window) {
          $rootScope.loading = true;
          var navs = $rootScope.navs =[ { title: '易經上', url: '#!/doc/yijing/1' },
                                        { title: '易經下', url: '#!/doc/yijing/2' },
@@ -767,12 +768,17 @@ Public License instead of this License.  But first, please read
              updatePageTitle = function () {
                 var name = getPageSubTitle();
                 doc.title = title + (!!name ? ' - ' + name : '');
-             };
+             },
+             addGoogleTracking = function () {
+                $window.ga('send', 'pageview', { page: $location.path() });
+             }
+             
          $rootScope.$on('$routeChangeSuccess', function(events, newRoute) {
 
             updatePageTitle();
             $rootScope.loading = false;
             $anchorScroll();
+            addGoogleTracking();
          });
       }]);
 ;
