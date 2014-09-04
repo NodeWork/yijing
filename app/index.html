@@ -11,6 +11,8 @@
     <meta name="keywords" content="duyijing,yijing,ichang,十翼,周易,易经,读易经,六十四卦">
     <meta name="author" content="HaishengWu,Freizl">
     <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://duyijing.cn/" />
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" href="styles/bootstrap.css" />
@@ -40,38 +42,38 @@
 
     <!-- ngTemplates -->
     <script type="text/ng-template" id="gua.html">
-    <div>
-      <div class="col-sm-3 gua {{guaSize}}">
-        <label ng-class="vo.name.length === 1 ? 'name' : 'name2'" ng-click="guaClick()">{{vo.name}}</label>
-        <span ng-repeat="item in items"
-              class="{{item.clazz}}"
-              ng-click="yaoClick(5-$index)"
-              >
-        </span>
+      <div>
+        <div class="col-sm-3 gua {{guaSize}}">
+          <label ng-class="vo.name.length === 1 ? 'name' : 'name2'" ng-click="guaClick()">{{vo.name}}</label>
+          <span ng-repeat="item in items"
+                class="{{item.clazz}}"
+                ng-click="yaoClick(5-$index)"
+                >
+          </span>
+        </div>
+        <div class="col-sm-7 explnation">
+          <section name="guaCi" ng-show="showGuaInfo">
+            <h2>卦辞</h2>
+            <p>{{vo.guaCi}}</p>
+          </section>
+          <section name="daXiang" ng-show="showGuaInfo">
+            <h2>大象</h2>
+            <p>{{vo.daXiang}}</p>
+          </section>
+          <section name="tuanCi" ng-show="showGuaInfo">
+            <h2>彖辞</h2>
+            <p>{{vo.tuanCi}}</p>
+          </section>
+          <section name="yaoCi" ng-show="!showGuaInfo">
+            <h2>爻辞</h2>
+            <p>{{vo.yaoCi}}</p>
+          </section>
+          <section name="xiaoXiang" ng-show="!showGuaInfo">
+            <h2>小象</h2>
+            <p>{{vo.xiaoXiang}}</p>
+          </section>
+        </div>
       </div>
-      <div class="col-sm-7 explnation">
-        <section name="guaCi" ng-show="showGuaInfo">
-          <h2>卦辞</h2>
-          <p>{{vo.guaCi}}</p>
-        </section>
-        <section name="daXiang" ng-show="showGuaInfo">
-          <h2>大象</h2>
-          <p>{{vo.daXiang}}</p>
-        </section>
-        <section name="tuanCi" ng-show="showGuaInfo">
-          <h2>彖辞</h2>
-          <p>{{vo.tuanCi}}</p>
-        </section>
-        <section name="yaoCi" ng-show="!showGuaInfo">
-          <h2>爻辞</h2>
-          <p>{{vo.yaoCi}}</p>
-        </section>
-        <section name="xiaoXiang" ng-show="!showGuaInfo">
-          <h2>小象</h2>
-          <p>{{vo.xiaoXiang}}</p>
-        </section>
-      </div>
-    </div>
     </script>
 
     <script type="text/ng-template" id="gua-simple.html">
@@ -85,6 +87,7 @@
       </a>
     </script>
     <!-- ngTemplates -->
+
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
