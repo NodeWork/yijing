@@ -17,6 +17,8 @@
       (gua, yao, ZongGua, JiaoGua, etc.)
 
 - [ ] zh-CN/zh-TW switch?
+  + i18n angularjs
+  + make data a separated json call
 - [ ] sitemap.html?
 - [ ] Update meta data of each Gua
 - [X] google analitics tracking
