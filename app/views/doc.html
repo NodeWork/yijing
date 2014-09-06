@@ -1,7 +1,7 @@
 <div class="shiyi-doc">
     <ol start="{{start}}">
         <li ng-repeat="item in docs">
-            <a ng-href="{{guaUrl(item.name)}}" class="name">{{item.name}}</a>
+            <a title="{{ item.title }}" ng-href="{{ item.url }}" class="name">{{item.name}}</a>
             <ul>
                 <li ng-repeat="v in item.values">
                     {{v}}

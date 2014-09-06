@@ -777,7 +777,8 @@ Public License instead of this License.  But first, please read
                   scope.vo = { name: data.name,
                                urlPath: '#!/gua/' + data.name, //FIXME: move 'gua' as a constant
                                labelStyle: data.name.length === 1 ? 'name' : 'name2',
-                               items: items
+                               items: items,
+                               title: data.name + '卦'
                              };
 
                };

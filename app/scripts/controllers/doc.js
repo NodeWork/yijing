@@ -691,7 +691,11 @@ Public License instead of this License.  But first, please read
 
    function fetchData (datas, guas, type) {
       var xs = guas.map(function (guaName) {
-         return {name: guaName, values: fetchValueOnType(type, datas[guaName])};
+         return { name: guaName,
+                  title: guaName + '卦',
+                  url: '#!/gua/'+ guaName,
+                  values: fetchValueOnType(type, datas[guaName])
+                };
       });
       return xs;
    }
@@ -705,7 +709,6 @@ Public License instead of this License.  But first, please read
 
          $scope.start = (index - 1) * 30 + 1;
          $scope.docs = fetchData(guaService.namedData, guaService.jings[index-1], type);
-         $scope.guaUrl = function (n) { return '#!/gua/'+n; };
 
       }])
 

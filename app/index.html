@@ -77,7 +77,7 @@
     </script>
 
     <script type="text/ng-template" id="gua-simple.html">
-      <a ng-href="{{ vo.urlPath }}" class="gua-simple">
+      <a ng-href="{{ vo.urlPath }}" class="gua-simple" title="{{ vo.title }}">
           <section class="gua {{guaSize}}">
               <label ng-class="vo.labelStyle" >{{vo.name}}</label>
               <span ng-repeat="item in vo.items"
