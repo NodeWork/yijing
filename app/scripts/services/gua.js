@@ -755,6 +755,9 @@ Public License instead of this License.  But first, please read
                };
       angular.forEach(xs, function (value) {
          value.name = getGuaData(value.key).name;
+         value.url = '#!/gua/' + value.name;
+         value.title = value.name + '卦';
+         value.displayName = value.type + ' - ' + value.title;
       });
       return xs;
    }
