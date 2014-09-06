@@ -199,6 +199,9 @@ p {
   }
   .gua.small .name,
   .gua.small .name2 {
-    font-size: 16px;
+    font-size: 14px;
+  }
+  .six-four .gua-simple .gua.small {
+    width: 20px;
   }
 }
