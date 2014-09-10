@@ -3,14 +3,15 @@
 - [X] include bootstrap.js
 - [X] busy svg icon
   + via css3
-- [ ] Performance!!
 - [X] Update page title per page
 - [X] use less
-- []  mobile `hamer.js`
-- [ ] ng-animation?
 - [X] Single Ctrl for static docs
 - [X] custome bootstrap in terms of rm un-used CSS and JS
-- [] stylish static docs
+
+- [ ] Performance!!
+- [ ]  mobile `hamer.js`
+- [ ] ng-animation?
+- [ ] stylish static docs
 - [ ] XianTian 8Gua Map
 - [ ] Maybe HouTian 8Gua Map
 - [ ] FAQ page for some common things
@@ -19,6 +20,7 @@
 - [ ] zh-CN/zh-TW switch?
   + i18n angularjs
   + make data a separated json call
+
 - [ ] sitemap.html?
 
 - [ ] Update meta data of each Gua
@@ -34,6 +36,8 @@
 
 - [ ] vertial display explanation
 
+- [ ] Site general style and background
+
 # SEO
 
   - <prerender.io>
@@ -46,4 +50,3 @@
 # Tools
 
 - <http://iconverticons.com/online/>
-
