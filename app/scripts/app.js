@@ -712,7 +712,7 @@ Public License instead of this License.  But first, please read
          // ===== static docs
 
             .when('/static/:name', {
-               templateUrl: '/views/tmp.html',
+               templateUrl: '/views/static.html',
                controller: 'StaticDocCtrl'
             })
 
