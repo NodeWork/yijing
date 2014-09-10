@@ -98,10 +98,10 @@ a.gua-simple:hover {
 /* ==================== Large */
 .gua.large .name {
   margin-left: 60px;
-  font-size: 30pt;
+  font-size: 28pt;
 }
 .gua.large .name2 {
-  font-size: 30pt;
+  font-size: 28pt;
   margin-left: 40px;
 }
 .gua.large .yang,
@@ -133,6 +133,12 @@ a.gua-simple:hover {
   border-right-width: 21px;
 }
 /* ==================== Explanation */
+.explanation {
+  margin-top: 55px;
+}
+.explanation section label {
+  font-size: 18pt;
+}
 .shiyi-doc li,
 p {
   font-size: 16px;
@@ -172,22 +178,19 @@ p {
 /* ====================== Gua page */
 .gua-container .row {
   border-top: 1px solid #DDD;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   padding-top: 20px;
 }
 /* ====================== 10-Yi Doc */
 .shiyi-doc .name {
   font-size: 26px;
 }
-@media (max-width: 769px) {
-  .yin-yang {
-    background-image: none;
-  }
-  .six-four {
-    margin-left: 0;
+@media (max-width: 1023px) and (min-width: 641px) {
+  .explanation {
+    margin-left: 50px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .six-four .gua-simple .gua .yin,
   .six-four .gua-simple .gua .yang {
     display: none;
@@ -198,5 +201,26 @@ p {
   }
   .six-four .gua-simple .gua.small {
     width: 20px;
+  }
+  .gua.large .name {
+    margin-left: 22px;
+    font-size: 20pt;
+  }
+  .gua.large .name2 {
+    margin-left: 10px;
+    font-size: 20pt;
+  }
+  .gua.large .yang,
+  .gua.large .yin {
+    margin-bottom: 5px;
+    height: 8px;
+    width: 70px;
+  }
+  .gua.large .yin {
+    border-left-width: 34px;
+    border-right-width: 34px;
+  }
+  .explanation {
+    margin-top: 20px;
   }
 }
