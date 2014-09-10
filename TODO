@@ -6,7 +6,7 @@
 - [X] Update page title per page
 - [X] use less
 - [X] Single Ctrl for static docs
-- [X] custome bootstrap in terms of rm un-used CSS and JS
+- [X] Custom bootstrap in terms of rm un-used CSS and JS
 
 - [ ] Performance!!
 - [ ]  mobile `hamer.js`
@@ -25,7 +25,7 @@
 
 - [ ] Update meta data of each Gua
 
-- [X] google analitics tracking
+- [X] google anylitics tracking
   - page view
 
 - [ ] Eliminate duplicate code
@@ -34,13 +34,14 @@
 
 - [ ] add more links of yijing related sites
 
-- [ ] vertial display explanation
+- [ ] Vertical display explanation
 
 - [ ] Site general style and background
+  + 山水画?
 
 # SEO
 
-  - <prerender.io>
+  - <http://prerender.io>
 
 # MISC
 
