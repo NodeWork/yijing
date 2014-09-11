@@ -1,4 +1,6 @@
-var paper = Raphael(10, 10, 1024, 300);
+var paper = Raphael(10, 10, 1024, 768);
+
+// ====================================== 8 Gua
 
 var circle = paper.circle(700, 150, 110);
 paper.text(700, 20, "二");
@@ -9,6 +11,19 @@ paper.text(600, 70, "六").attr({'transform': 'r-50'});
 paper.text(600, 230, "七").attr({'transform': 'r-130'});
 paper.text(800, 70, "八").attr({'transform': 'r50'});
 paper.text(800, 230, "九").attr({'transform': 'r130'});
+
+_yao(1);
+_yao(0);
+
+function _yao(key) {
+    if (key == 1) {
+        paper.rect(100, 300, 105, 20).attr({"fill": "#FF0000", "stroke": "#FFF"});
+    } else {
+        paper.rect(100, 330, 50, 20).attr({"fill": "#000000", "stroke": "#FFF"});
+        paper.rect(155, 330, 50, 20).attr({"fill": "#000000", "stroke": "#FFF"});
+    }
+}
+// ======================================= Type designation
 
 var textStyle1 = { "text-anchor":"start",
                   "font-style": "italic"
