@@ -5,6 +5,13 @@
   /* src: url("MingLiu.ttf") format("truetype") */
 }
 body {
+  background: url(/images/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
   -webkit-font-smoothing: antialiased;
   padding-top: 60px;
 }
@@ -153,6 +160,7 @@ p {
   background-color: white;
   margin: 30px auto;
   width: 80%;
+  opacity: 0.8;
 }
 .six-four .gua-simple .gua.small {
   width: 45px;
