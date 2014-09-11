@@ -125,8 +125,8 @@ a.gua-simple:hover {
 .gua.small .yang,
 .gua.small .yin {
   margin-bottom: 3px;
-  height: 6px;
-  width: 44px;
+  height: 5px;
+  width: 46px;
 }
 .gua.small .yin {
   border-left-width: 21px;
@@ -151,6 +151,8 @@ p {
 /* ====================== home page 64-gua*/
 .six-four {
   background-color: white;
+  margin: 30px auto;
+  width: 80%;
 }
 .six-four .gua-simple .gua.small {
   width: 45px;
@@ -167,14 +169,6 @@ p {
   width: 50px;
   text-align: center;
 }
-/*
-.six-four .gua.small .name {
-  margin-left: -2px;
-}
-.six-four .gua.small .name2 {
-  margin-left: -6px;
-}
-*/
 /* ====================== Gua page */
 .gua-container .row {
   border-top: 1px solid #DDD;
