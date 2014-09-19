@@ -1,6 +1,6 @@
 # robotstxt.org
 
 User-agent: *
+Disallow: /zwwxkjnzacgtsh
 
 Sitemap: http://duyijing.cn/sitemap.xml
-
