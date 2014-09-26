@@ -1,4 +1,4 @@
-[读易经|http://duyijing.cn/]
+[读易经](http://duyijing.cn/)
 
 For learing iChang
 
