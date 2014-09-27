@@ -43,6 +43,14 @@
 
 - [ ] grunt-angular-templates
 
+# Multi language
+
+- https://github.com/angular-translate/angular-translate
+- https://github.com/angular-translate/angular-translate/wiki/Demos
+- http://www.ng-newsletter.com/posts/angular-translate.html
+- http://lostechies.com/gabrielschenker/2014/02/11/angularjspart-12-multi-language-support/
+
+
 # SEO
 
   - <http://prerender.io>
