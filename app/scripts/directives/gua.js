@@ -684,7 +684,7 @@ Public License instead of this License.  But first, please read
          return {
             replace: true,
             restrict:'E',
-            scope: { guaKey: '=', guaSize: '=' },
+            scope: { guaKey: '@', guaSize: '@' },
             link: function(scope, element, attrs) {
                scope.guaSize = attrs.guaSize;
 
@@ -692,7 +692,6 @@ Public License instead of this License.  But first, please read
                // 1. any smarter way to do active/inactive style?
                // 2. the `items` array and yao data array are just reverse seq..wired!??
                // 3. error out when key in not one of 64
-               // 4. disable click on each yao but just whole gua
                // 5. animation for transform
                //
 
