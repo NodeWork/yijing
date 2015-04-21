@@ -716,6 +716,7 @@ Public License instead of this License.  But first, please read
          $scope.baseKey = normalizeKey(k);
 
          // show Gua info when input complete
+		 /*
          $scope.checkInputComplete = function () {
             var xs = [6,7,8,9,8,6],
                 ys = normalizeInput(xs, true);
@@ -723,6 +724,7 @@ Public License instead of this License.  But first, please read
             ys.reverse();
             $scope.baseKey = ys.join('');
          };
+		  */
 
       }]);
 
